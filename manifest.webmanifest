@@ -1,0 +1,22 @@
+{
+  "name": "Dongpai Metal · 東排金屬",
+  "short_name": "Dongpai Metal",
+  "description": "Architectural metalworks atelier for Hong Kong's skyline — since 2012.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f6f1e3",
+  "theme_color": "#1a1612",
+  "icons": [
+    {
+      "src": "/assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

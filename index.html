@@ -14,18 +14,52 @@
     <link rel="alternate" hreflang="zh-Hant" href="https://www.dongpai-metal.com/?lang=zh-hant" />
     <link rel="alternate" hreflang="x-default" href="https://www.dongpai-metal.com/" />
 
+    <!-- Open Graph (WeChat / LinkedIn / Facebook share card) -->
+    <meta property="og:site_name" content="Dongpai Metal" />
     <meta property="og:title" content="Dongpai Metal · Architectural Metalworks Atelier" />
-    <meta
-      property="og:description"
-      content="The metal envelope behind Hong Kong's most distinguished addresses. Bronze. Aluminium. Stainless steel. Since 2012."
-    />
+    <meta property="og:description" content="The bronze, aluminium and stainless-steel envelope behind Hong Kong's most distinguished addresses — since 2012. 47,000 m² Huizhou flagship + 12,000 m² Dongguan workshop + Hong Kong sales & engineering." />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="assets/site/projects/cullinan-harbour-ceiling.jpg" />
+    <meta property="og:url" content="https://dongpaimetal.com/" />
+    <meta property="og:image" content="https://dongpaimetal.com/assets/site/hero-cinematic.webp" />
+    <meta property="og:image:width" content="2400" />
+    <meta property="og:image:height" content="2566" />
+    <meta property="og:locale" content="en_HK" />
+    <meta property="og:locale:alternate" content="zh_HK" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Dongpai Metal · Hong Kong's metal envelope, since 2012" />
+    <meta name="twitter:description" content="Bronze, aluminium and stainless-steel façades for the developers and architects shaping Hong Kong's skyline." />
+    <meta name="twitter:image" content="https://dongpaimetal.com/assets/site/hero-cinematic.webp" />
+
+    <!-- Favicons + PWA manifest -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
     <meta name="theme-color" content="#f6f1e3" />
+    <meta name="apple-mobile-web-app-title" content="Dongpai Metal" />
+    <meta name="format-detection" content="telephone=no" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="styles.css?v=31" />
+    <link rel="stylesheet" href="styles.css?v=32" />
+
+    <!-- Schema.org BreadcrumbList for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dongpaimetal.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://dongpaimetal.com/#capabilities" },
+        { "@type": "ListItem", "position": 3, "name": "Selected Work", "item": "https://dongpaimetal.com/#work" },
+        { "@type": "ListItem", "position": 4, "name": "Group", "item": "https://dongpaimetal.com/#studio" },
+        { "@type": "ListItem", "position": 5, "name": "Contact", "item": "https://dongpaimetal.com/#contact" }
+      ]
+    }
+    </script>
 
     <script type="application/ld+json">
       {
@@ -126,10 +160,10 @@
       <section class="hero">
         <!-- Hero media: Ken Burns rotating gallery — drop-in <video> when real b-roll arrives -->
         <div class="hero-media" aria-hidden="true">
-          <img src="assets/site/hero-cinematic.jpg?v=23" class="hero-img" alt="" />
-          <img src="assets/site/projects/cullinan-harbour.jpg" class="hero-img" alt="" loading="lazy" />
-          <img src="assets/site/projects/deep-water-pavilia-alt.jpg" class="hero-img" alt="" loading="lazy" />
-          <img src="assets/site/projects/factory-layout.jpg" class="hero-img" alt="" loading="lazy" />
+          <img src="assets/site/hero-cinematic.webp?v=23" class="hero-img" alt="" />
+          <img src="assets/site/projects/cullinan-harbour.webp" class="hero-img" alt="" loading="lazy" />
+          <img src="assets/site/projects/deep-water-pavilia-alt.webp" class="hero-img" alt="" loading="lazy" />
+          <img src="assets/site/projects/factory-layout.webp" class="hero-img" alt="" loading="lazy" />
         </div>
         <div class="hero-veil" aria-hidden="true"></div>
 
@@ -238,7 +272,7 @@
           <div class="products-grid">
             <article class="product-card" data-reveal data-stagger>
               <figure class="product-img">
-                <img src="assets/site/projects/cullinan-harbour.jpg" alt="Aluminium curtain-wall panels at Cullinan Harbour podium" />
+                <img src="assets/site/projects/cullinan-harbour.webp" alt="Aluminium curtain-wall panels at Cullinan Harbour podium" />
                 <span class="product-num">01</span>
               </figure>
               <div class="product-info">
@@ -260,7 +294,7 @@
 
             <article class="product-card" data-reveal data-stagger>
               <figure class="product-img">
-                <img src="assets/site/projects/deep-water-pavilia-alt.jpg" alt="Bronze aluminium balcony handrail at Deep Water Pavilia" />
+                <img src="assets/site/projects/deep-water-pavilia-alt.webp" alt="Bronze aluminium balcony handrail at Deep Water Pavilia" />
                 <span class="product-num">02</span>
               </figure>
               <div class="product-info">
@@ -282,7 +316,7 @@
 
             <article class="product-card" data-reveal data-stagger>
               <figure class="product-img">
-                <img src="assets/site/projects/spring-garden-lane.jpg" alt="AC grill and louvre matched to facade cladding" />
+                <img src="assets/site/projects/spring-garden-lane.webp" alt="AC grill and louvre matched to facade cladding" />
                 <span class="product-num">03</span>
               </figure>
               <div class="product-info">
@@ -304,7 +338,7 @@
 
             <article class="product-card" data-reveal data-stagger>
               <figure class="product-img">
-                <img src="assets/site/projects/cullinan-harbour-ceiling.jpg" alt="Rhombic suspended bronze ceiling at Cullinan Harbour" />
+                <img src="assets/site/projects/cullinan-harbour-ceiling.webp" alt="Rhombic suspended bronze ceiling at Cullinan Harbour" />
                 <span class="product-num">04</span>
               </figure>
               <div class="product-info">
@@ -326,7 +360,7 @@
 
             <article class="product-card" data-reveal data-stagger>
               <figure class="product-img">
-                <img src="assets/site/projects/tkotl-taikoo-dpark.jpg" alt="Stainless steel feature wall — Taikoo Place" />
+                <img src="assets/site/projects/tkotl-taikoo-dpark.webp" alt="Stainless steel feature wall — Taikoo Place" />
                 <span class="product-num">05</span>
               </figure>
               <div class="product-info">
@@ -448,7 +482,7 @@
           <article class="work-spread" data-reveal>
             <a class="work-img-link" href="work/deep-water-pavilia.html" aria-label="View deep-water-pavilia project page"><figure class="work-img">
               <span class="work-img-tag">South Side · Phase 5</span>
-              <img src="assets/site/projects/deep-water-pavilia-alt.jpg" alt="Deep Water Pavilia 滶晨 — bronze aluminium balcony handrail, AC grill and pipe-duct cladding above Wong Chuk Hang MTR podium" />
+              <img src="assets/site/projects/deep-water-pavilia-alt.webp" alt="Deep Water Pavilia 滶晨 — bronze aluminium balcony handrail, AC grill and pipe-duct cladding above Wong Chuk Hang MTR podium" />
             </figure></a>
             <div class="work-info">
               <span class="num">№.001 — 2023 / 2025</span>
@@ -471,7 +505,7 @@
           <article class="work-spread flip" data-reveal>
             <a class="work-img-link" href="work/cullinan-harbour.html" aria-label="View cullinan-harbour project page"><figure class="work-img">
               <span class="work-img-tag">Kai Tak · 6551</span>
-              <img src="assets/site/projects/cullinan-harbour.jpg" alt="Cullinan Harbour 天璽·海 — Kai Tak 6551 podium external cladding, façade and street-level approach" />
+              <img src="assets/site/projects/cullinan-harbour.webp" alt="Cullinan Harbour 天璽·海 — Kai Tak 6551 podium external cladding, façade and street-level approach" />
             </figure></a>
             <div class="work-info">
               <span class="num">№.002 — 2024</span>
@@ -494,7 +528,7 @@
           <article class="work-spread" data-reveal>
             <a class="work-img-link" href="work/101-kings-road.html" aria-label="View 101-kings-road project page"><figure class="work-img">
               <span class="work-img-tag">North Point</span>
-              <img src="assets/site/projects/101-kings-road.jpg" alt="101 King's Road — Wang On Properties tower, vertical bronze balcony fins above the King's Road tram line, North Point" />
+              <img src="assets/site/projects/101-kings-road.webp" alt="101 King's Road — Wang On Properties tower, vertical bronze balcony fins above the King's Road tram line, North Point" />
             </figure></a>
             <div class="work-info">
               <span class="num">№.003 — 2024</span>
@@ -517,7 +551,7 @@
           <article class="work-spread flip" data-reveal>
             <a class="work-img-link" href="work/spring-garden-lane.html" aria-label="View spring-garden-lane project page"><figure class="work-img">
               <span class="work-img-tag">Wan Chai</span>
-              <img src="assets/site/projects/spring-garden-lane.jpg" alt="38 Spring Garden Lane — Wheelock Properties, podium feature wall, column cladding, metal ceiling and balcony, Wan Chai" />
+              <img src="assets/site/projects/spring-garden-lane.webp" alt="38 Spring Garden Lane — Wheelock Properties, podium feature wall, column cladding, metal ceiling and balcony, Wan Chai" />
             </figure></a>
             <div class="work-info">
               <span class="num">№.004 — 2023</span>
@@ -540,7 +574,7 @@
           <article class="work-spread" data-reveal>
             <a class="work-img-link" href="work/phoenext.html" aria-label="View phoenext project page"><figure class="work-img">
               <span class="work-img-tag">Wong Tai Sin</span>
-              <img src="assets/site/projects/phoenext.jpg" alt="Phoenext 薈鳴 — Wang On Properties / Lu Tang Lai Architects, external cladding, balcony grill, railing and ceiling panels, Wong Tai Sin" />
+              <img src="assets/site/projects/phoenext.webp" alt="Phoenext 薈鳴 — Wang On Properties / Lu Tang Lai Architects, external cladding, balcony grill, railing and ceiling panels, Wong Tai Sin" />
             </figure></a>
             <div class="work-info">
               <span class="num">№.005 — 2023</span>
@@ -848,7 +882,7 @@
           </div>
 
           <figure class="studio-floor" data-reveal>
-            <img src="assets/site/projects/factory-layout.jpg" alt="Dongpai Metal flagship plant — six interior views of the 47,000 m² Huizhou production floor: laser cutting, brake forming, welding, finishing and assembly bays" />
+            <img src="assets/site/projects/factory-layout.webp" alt="Dongpai Metal flagship plant — six interior views of the 47,000 m² Huizhou production floor: laser cutting, brake forming, welding, finishing and assembly bays" />
             <figcaption>
               <span class="kicker" data-i18n="studioFloorKicker">№ 06.02 — Production Floor</span>
               <span data-i18n="studioFloorCap">Six bays under one roof — laser, brake, weld, finish and assembly. No subcontracted parts.</span>
@@ -857,7 +891,7 @@
 
           <div class="studio-grid">
             <article class="equip" data-reveal data-stagger>
-              <div class="equip-img"><img src="assets/site/equip-laser.jpg" alt="Laser cutting cell — 80mm plate, 2000×6000mm bed" /></div>
+              <div class="equip-img"><img src="assets/site/equip-laser.webp" alt="Laser cutting cell — 80mm plate, 2000×6000mm bed" /></div>
               <span class="equip-num">№.01 / Cutting</span>
               <h4 data-i18n="equip1Name">Laser Cutting Cell</h4>
               <dl>
@@ -867,7 +901,7 @@
             </article>
 
             <article class="equip" data-reveal data-stagger>
-              <div class="equip-img"><img src="assets/site/tube-cutting.jpg" alt="Laser tube cutting — Ø550mm, 12,000mm length" /></div>
+              <div class="equip-img"><img src="assets/site/tube-cutting.webp" alt="Laser tube cutting — Ø550mm, 12,000mm length" /></div>
               <span class="equip-num">№.02 / Tube</span>
               <h4 data-i18n="equip2Name">Laser Tube Cutting</h4>
               <dl>
@@ -877,7 +911,7 @@
             </article>
 
             <article class="equip" data-reveal data-stagger>
-              <div class="equip-img"><img src="assets/site/product-reference.jpg" alt="500-ton press brake — 25mm bend thickness, 3000mm length" /></div>
+              <div class="equip-img"><img src="assets/site/product-reference.webp" alt="500-ton press brake — 25mm bend thickness, 3000mm length" /></div>
               <span class="equip-num">№.03 / Brake</span>
               <h4 data-i18n="equip3Name">500-Ton Press Brake</h4>
               <dl>
@@ -887,7 +921,7 @@
             </article>
 
             <article class="equip" data-reveal data-stagger>
-              <div class="equip-img"><img src="assets/site/equip-welder.jpg" alt="Robotic welding cell — 6-axis articulated arm" /></div>
+              <div class="equip-img"><img src="assets/site/equip-welder.webp" alt="Robotic welding cell — 6-axis articulated arm" /></div>
               <span class="equip-num">№.04 / Weld</span>
               <h4 data-i18n="equip4Name">Robotic Welding Cell</h4>
               <dl>
@@ -911,7 +945,7 @@
 
           <div class="logistic-grid">
             <figure class="logistic-map" data-reveal>
-              <img src="assets/site/projects/logistic-map.jpg" alt="Logistic map — Dongpai Metal Huizhou flagship plant and Changlei Dongguan partner workshop, 16 km apart, both ≈2 hrs to Hong Kong SAR" />
+              <img src="assets/site/projects/logistic-map.webp" alt="Logistic map — Dongpai Metal Huizhou flagship plant and Changlei Dongguan partner workshop, 16 km apart, both ≈2 hrs to Hong Kong SAR" />
             </figure>
             <div class="logistic-side" data-reveal>
               <p data-i18n="logisticP">
@@ -1066,7 +1100,7 @@
 
           <div class="cert-grid">
             <figure class="cert-doc" data-reveal>
-              <img src="assets/site/projects/certificate-en1090.jpg" alt="EN 1090-2 Class EXC3 certification — TÜV-issued conformity certificate for complex structural steel and curtain-wall fabrication, with EOTA-compliant design and shop drawings" />
+              <img src="assets/site/projects/certificate-en1090.webp" alt="EN 1090-2 Class EXC3 certification — TÜV-issued conformity certificate for complex structural steel and curtain-wall fabrication, with EOTA-compliant design and shop drawings" />
               <figcaption data-i18n="certCap">EN 1090-2 Class EXC3 — Complex Structure</figcaption>
             </figure>
 
@@ -1271,6 +1305,15 @@
       </div>
     </footer>
 
-    <script src="script.js?v=31"></script>
+    <script src="script.js?v=32"></script>
+
+    <!-- Google Analytics 4 — replace G-XXXXXXXXXX with your actual GA4 measurement ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true });
+    </script>
   </body>
 </html>
