@@ -1,0 +1,13 @@
+# ──────────────────────────────────────────────
+# Cloudflare Pages redirects · dongpaimetal.com
+# ──────────────────────────────────────────────
+
+# Deprecated simplified Chinese → traditional
+/zh-hans   /?lang=zh-hant   302
+/sc        /?lang=zh-hant   302
+
+# Friendly project URLs (already work — kept as docs)
+/work      /#work           302
+
+# www → apex (Cloudflare will normalise)
+https://www.dongpaimetal.com/*  https://dongpaimetal.com/:splat  301
