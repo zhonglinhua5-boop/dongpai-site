@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.changqing-metal.com/sitemap.xml
+Sitemap: https://dongpaimetal.com/sitemap.xml
