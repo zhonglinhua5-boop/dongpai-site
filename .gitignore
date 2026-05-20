@@ -1,0 +1,9 @@
+# Local previews + dev caches
+_pdf_pages/
+*.bak.*
+.DS_Store
+node_modules/
+.vscode/
+
+# Source PDF originals (huge, keep local)
+"东排*.pdf"
