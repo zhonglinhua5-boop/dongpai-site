@@ -1529,12 +1529,13 @@ section {
 .enquiry select,
 .enquiry textarea {
   font-family: var(--font-sans);
-  font-size: 14px;
+  /* iOS / 微信内置浏览器 < 16px 输入会自动 zoom 放大整页 — 用 16px 防触发 */
+  font-size: 16px;
   color: var(--text);
   background: transparent;
   border: 0;
   border-bottom: 1px solid var(--rule-strong);
-  padding: 10px 0 12px;
+  padding: 12px 0 14px;
   outline: none;
   transition: border-color 220ms var(--easing);
   letter-spacing: 0.01em;
@@ -1722,13 +1723,14 @@ section {
 
 .mobile-nav a {
   font-family: var(--font-display);
-  font-weight: 300;
-  font-size: 32px;
+  font-weight: 400;
+  font-size: 28px;
   letter-spacing: -0.01em;
-  color: var(--paper);
-  padding: 14px 0;
+  color: var(--ink);  /* was var(--paper) — same as bg = invisible text */
+  padding: 16px 0;
+  min-height: 56px;  /* WCAG touch target */
   border-bottom: 1px solid var(--rule);
-  font-variation-settings: "opsz" 80, "SOFT" 50;
+  font-variation-settings: "opsz" 80;
 }
 
 .mobile-nav a:hover { color: var(--bronze-1); }
@@ -1737,11 +1739,11 @@ section {
   position: absolute;
   top: 22px;
   right: var(--gutter);
-  width: 38px;
-  height: 38px;
+  width: 48px;  /* was 38px — below WCAG 44px target */
+  height: 48px;
   border: 1px solid var(--rule-strong);
   border-radius: 50%;
-  color: var(--paper);
+  color: var(--ink);  /* was var(--paper) — invisible */
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1833,10 +1835,10 @@ section {
   display: block;
   width: 100%;
   height: auto;
-  background: #ffffff;
-  padding: clamp(14px, 1.5vw, 22px);
-  border: 1px solid var(--rule-strong);
-  box-shadow: 0 24px 64px -22px rgba(40, 30, 20, 0.22);
+  background: transparent;
+  padding: 0;
+  border: 0;
+  box-shadow: none;
 }
 .studio-floor figcaption {
   margin-top: 20px;
@@ -1882,10 +1884,10 @@ section {
 }
 
 .logistic-map {
-  background: #ffffff;
-  padding: clamp(18px, 2vw, 30px);
-  border: 1px solid var(--rule-strong);
-  box-shadow: 0 24px 64px -22px rgba(40, 30, 20, 0.22);
+  background: transparent;
+  padding: 0;
+  border: 0;
+  box-shadow: none;
 }
 .logistic-map img {
   display: block;
@@ -2729,12 +2731,14 @@ html[lang*="zh"] .work-img-link::after {
 }
 .proj-gallery-item {
   overflow: hidden;
-  background: #fff;
-  border: 1px solid var(--rule);
+  background: transparent;
+  border: 0;
+  aspect-ratio: 16 / 10;  /* equal heights across all gallery items */
 }
 .proj-gallery-item img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   display: block;
   transition: transform 700ms var(--easing);
 }
@@ -2853,11 +2857,12 @@ html[lang*="zh"] .work-img-link::after {
 }
 
 .group-card.group-primary {
-  background: linear-gradient(180deg, #ffffff 0%, var(--paper) 100%);
-  border-color: var(--bronze);
-  border-width: 1px;
-  border-left-width: 3px;
-  box-shadow: 0 18px 36px -22px rgba(138, 107, 65, 0.30);
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--rule);
+  border-left: 3px solid var(--bronze);
+  padding-left: 18px;
+  box-shadow: none;
 }
 
 .group-tag {
@@ -3539,10 +3544,14 @@ body.lang-en .zh-meta,
 body.lang-en .proj-subtitle {
   display: none;
 }
-body.lang-zh .proj-copy-en {
+body.lang-zh .proj-copy-en,
+body.lang-zh-hant .proj-copy-en,
+body.lang-zh-hans .proj-copy-en {
   display: none;
 }
-body.lang-zh .proj-fact dd { font-family: var(--font-chinese-display); font-weight: 400; }
+body.lang-zh .proj-fact dd,
+body.lang-zh-hant .proj-fact dd,
+body.lang-zh-hans .proj-fact dd { font-family: var(--font-chinese-display); font-weight: 400; }
 
 /* Hide quick-fact value English version when zh and the value has a zh-meta sibling */
 body.lang-zh .proj-fact dd > br + .zh-meta {
@@ -3780,4 +3789,51 @@ body.lang-en .h3-zh {
   line-height: 1.45;
   color: var(--text);
   max-width: 60ch;
+}
+
+/* ═════════════════════════════════════════════════════════════
+   Compat: work detail pages set body.lang-zh-hant (matches main site),
+   but older proj-fact CSS rules were written with body.lang-zh only.
+   Mirror those rules to lang-zh-hant so detail pages render zh correctly.
+   ═════════════════════════════════════════════════════════════ */
+body.lang-zh-hant .proj-fact dd > br + .zh-meta,
+body.lang-zh-hans .proj-fact dd > br + .zh-meta {
+  display: block;
+  font-family: var(--font-chinese-display);
+  font-size: 15px;
+  color: var(--ink);
+  margin-top: 0;
+}
+body.lang-zh-hant .proj-fact dd > br,
+body.lang-zh-hans .proj-fact dd > br {
+  display: none;
+}
+body.lang-zh-hant .proj-fact dd,
+body.lang-zh-hans .proj-fact dd { font-size: 0; }
+body.lang-zh-hant .proj-fact dd .zh-meta,
+body.lang-zh-hans .proj-fact dd .zh-meta { font-size: 15px; }
+body.lang-zh-hant .proj-fact dd:not(:has(.zh-meta)),
+body.lang-zh-hans .proj-fact dd:not(:has(.zh-meta)) { font-size: 15px; }
+
+/* ═════════════════════════════════════════════════════════════
+   繁/简模式 · 额外抑制 italic (中文不该有斜体)
+   ═════════════════════════════════════════════════════════════ */
+body.lang-zh-hant .contact-key,
+body.lang-zh-hans .contact-key,
+body.lang-zh .contact-key {
+  font-style: normal;
+  font-weight: 500;
+}
+body.lang-zh-hant .phase-name,
+body.lang-zh-hans .phase-name,
+body.lang-zh .phase-name {
+  font-style: normal;
+  font-weight: 500;
+  color: var(--bronze-1);
+}
+/* groupMottoEn 在繁/简模式应隐藏 (避免 motto 中英两条重复) */
+body.lang-zh-hant .group-motto > span,
+body.lang-zh-hans .group-motto > span,
+body.lang-zh .group-motto > span {
+  display: none;
 }

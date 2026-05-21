@@ -271,8 +271,8 @@
       ownerBoth: "Client + Dongpai",
       ownerCL: "Dongpai Metal",
       ownerClient: "Client",
-      phase1Name: "Fabrication Drawing Collaboration",
-      phase2Name: "Trial Mock-up Collaboration",
+      phase1Name: "深化圖紙協作",
+      phase2Name: "1:1 樣板協作",
       process5Copy: "The full-scale mock-up is erected — at our atelier, or on a designated site bay — for visual, weather and tolerance review.",
       process5Title: "Erect Mock-up",
       process6Copy: "We rehearse the install sequence on the mock-up — fixings, sealing, tolerances, water test. Adjustments fold back into the drawing.",
@@ -306,7 +306,7 @@
 
     "zh-hant": {
       htmlLang: "zh-Hant",
-      title: "東排金屬 · 香港建築外立面金屬工程匠人 Atelier",
+      title: "東排金屬 · 香港建築外立面金屬工坊",
       description:
         "東排金屬集團——惠州 47,000 平方米旗艦廠（東排金屬）+ 東莞 12,000 平方米創始工廠（長磊五金）+ 香港銷售與工程辦公室。自 2012 年起為新世界、新鴻基、港鐵、會德豐、宏安等香港頂級開發商交付鋁、銅、不鏽鋼外立面、欄杆與裝飾金屬構件。",
       brandName: "東排金屬",
@@ -351,7 +351,7 @@
       manifestoK4: "地理覆蓋",
       manifestoV4: "香港 · 大灣區",
 
-      capabilitiesTitle: "五大專業，<em>一間 Atelier</em>。",
+      capabilitiesTitle: "五大專業，<em>一間工坊</em>。",
       cap1Title: '鋁合金外牆包覆',
       cap1Meta: "銅色 · 香檳色 ·<br />石墨陽極氧化",
       cap1Desc:
@@ -464,7 +464,7 @@
       inquirySubject: "專案詢價——東排金屬",
       footerSub: "東排金屬 · 東排金屬（香港）",
       footerTagline:
-        "建築金屬工程 Atelier，自 2012 年。為塑造香港天際線的開發商與建築師，提供銅、鋁、不鏽鋼外立面構件。",
+        "建築金屬工坊，自 2012 年。為塑造香港天際線的開發商與建築師，提供銅、鋁、不鏽鋼外立面構件。",
       footerNav: "導覽",
       footerContact: "聯絡",
       footerHK: "荃灣 · 觀塘 · 香港",
@@ -562,8 +562,8 @@
 
       /* ─── Process ─── */
       processLead: "八個步驟，分兩階段協作。建築師簽字 1:1 樣板前，沒有一塊板會量產。",
-      phase1Name: "Fabrication Drawing Collaboration",
-      phase2Name: "Trial Mock-up Collaboration",
+      phase1Name: "深化圖紙協作",
+      phase2Name: "1:1 樣板協作",
       ownerClient: "客戶方",
       ownerCL: "東排",
       ownerBoth: "客戶 + 東排",
@@ -572,7 +572,7 @@
       process6Title: "安裝複檢",
       process6Copy: "在樣板上預演安裝順序——固定件、密封、公差、水密測試。調整折回深化圖。",
       process7Title: "圖紙定稿",
-      process7Copy: "樣板即合約。建築師簽字 record drawing——只有這一刻起進入量產。",
+      process7Copy: "樣板即合約。建築師簽字 定稿圖紙——只有這一刻起進入量產。",
       process8Title: "批次生產",
       process8Copy: "正式量產——每道工序之間兩道 QC 檢查。從樣板到交付，同一位車間主管全程。",
 
@@ -627,7 +627,7 @@
 
     "zh-hans": {
       htmlLang: "zh-Hans",
-      title: "东排金属 · 香港建筑外立面金属工程匠人 Atelier",
+      title: "东排金属 · 香港建筑外立面金属工坊",
       description:
         "东排金属集团——惠州 47,000 平方米旗舰厂（东排金属）+ 东莞 12,000 平方米创始工厂（长磊五金）+ 香港销售与工程办公室。自 2012 年起为新世界、新鸿基、港铁、会德丰、宏安等香港顶级开发商交付铝、铜、不锈钢外立面、栏杆与装饰金属构件。",
       brandName: "东排金属",
@@ -672,7 +672,7 @@
       manifestoK4: "地理覆盖",
       manifestoV4: "香港 · 大湾区",
 
-      capabilitiesTitle: "五大专业，<em>一间 Atelier</em>。",
+      capabilitiesTitle: "五大专业，<em>一间工坊</em>。",
       cap1Title: '铝合金外墙包覆',
       cap1Meta: "铜色 · 香槟色 ·<br />石墨阳极氧化",
       cap1Desc:
@@ -796,7 +796,7 @@
       inquirySubject: "项目询价——东排金属",
       footerSub: "东排金属 · 东排金属（香港）",
       footerTagline:
-        "建筑金属工程 Atelier，自 2012 年。为塑造香港天际线的开发商与建筑师，提供铜、铝、不锈钢外立面构件。",
+        "建筑金属工坊，自 2012 年。为塑造香港天际线的开发商与建筑师，提供铜、铝、不锈钢外立面构件。",
       footerNav: "导览",
       footerContact: "联系",
       footerHK: "荃湾 · 观塘 · 香港",
@@ -894,8 +894,8 @@
 
       /* ─── Process ─── */
       processLead: "八个步骤，分两阶段协作。建筑师签字 1:1 样板前，没有一块板会量产。",
-      phase1Name: "Fabrication Drawing Collaboration",
-      phase2Name: "Trial Mock-up Collaboration",
+      phase1Name: "深化圖紙協作",
+      phase2Name: "1:1 樣板協作",
       ownerClient: "客户方",
       ownerCL: "东排",
       ownerBoth: "客户 + 东排",
@@ -904,7 +904,7 @@
       process6Title: "安装复检",
       process6Copy: "在样板上预演安装顺序——固定件、密封、公差、水密测试。调整折回深化图。",
       process7Title: "图纸定稿",
-      process7Copy: "样板即合约。建筑师签字 record drawing——只有这一刻起进入量产。",
+      process7Copy: "样板即合约。建筑师签字 定稿图纸——只有这一刻起进入量产。",
       process8Title: "批量生产",
       process8Copy: "正式量产——每道工序之间两道 QC 检查。从样板到交付，同一位车间主管全程。",
 
