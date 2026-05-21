@@ -3760,3 +3760,20 @@ body.lang-en .phase-zh,
 body.lang-en .h3-zh {
   display: none !important;
 }
+
+/* studio-floor-intro — replaces the removed 6-up factory-layout collage figure.
+   Just a clean kicker + one-line lead sitting above the 4 equipment cards. */
+.studio-floor-intro {
+  margin: clamp(20px, 3vh, 36px) 0 clamp(16px, 2vh, 28px);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.studio-floor-lead {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(17px, 1.4vw, 21px);
+  line-height: 1.45;
+  color: var(--text);
+  max-width: 60ch;
+}
