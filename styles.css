@@ -3563,3 +3563,9 @@ body.lang-zh-hant .archive-row .arc-cell .zh-meta {
   display: inline;
   font-family: var(--font-chinese-display, var(--font-display));
 }
+
+/* ═════════════════════════════════════════════════════════════
+   EN mode: hide the small Chinese subtitle of the group-motto
+   (zh-hant / zh-hans display both; EN only needs the main line).
+   ═════════════════════════════════════════════════════════════ */
+body.lang-en .group-motto > span { display: none; }
