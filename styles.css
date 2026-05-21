@@ -3732,3 +3732,15 @@ body.lang-zh-hans .footer-bottom {
 @media (max-width: 900px) {
   .contact-entities { grid-template-columns: 1fr; }
 }
+
+/* ═════════════════════════════════════════════════════════════
+   EN mode global · hide all .zh suffix spans (universal cleanup)
+   Catches any inline <span class="zh">…</span> we might use as a
+   bilingual subtitle anywhere on the page (e.g. footer copyright,
+   group card titles, process phase names, etc.)
+   ═════════════════════════════════════════════════════════════ */
+body.lang-en .zh,
+body.lang-en .phase-zh,
+body.lang-en .h3-zh {
+  display: none !important;
+}
