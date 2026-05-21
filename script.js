@@ -39,7 +39,7 @@
       heroScroll: "Scroll",
       metricYears: "Atelier established 2012",
       metricArea: "Flagship plant, Huizhou",
-      metricTeam: "Skilled craftsmen in-house",
+      metricTeam: "Huizhou · Dongguan · 2× Hong Kong",
       metricFlats: "Flats delivered, HK · GBA",
 
       manifestoKicker: "№ 01 — Manifesto",
@@ -105,17 +105,35 @@
       archiveTitle: "A <em>partial record</em> of buildings we've helped to clad.",
       archiveFootP: "A continuing record — <em>1,500+ flats</em> and counting, across thirteen years.",
       archiveFootCta: "Request full project list",
+      archHdrYear: "Year",
+      archHdrProject: "Project",
+      archHdrClient: "Client",
+      archHdrArchitect: "Architect",
+      archHdrScope: "Scope",
+      archLabelClient: "Client",
+      archLabelArchitect: "Architect",
+      archLabelScope: "Scope",
 
-      studioTitle: 'An <em>atelier</em>, the size of a factory.',
+      studioTitle: 'Four entities. <em>One envelope</em>.',
+      studioLead:
+        "Dongpai Metal — 東排金屬 — is a Greater Bay Area metalworks group structured as four entities under one delivery contract. Our <em>47,000 m² flagship plant</em> sits in Huizhou; <em>Changlei Hardware</em>, our 12,000 m² original workshop, runs in Dongguan; and our <em>Hong Kong sales office in Tsuen Wan</em> together with our <em>engineering office in Kwun Tong</em> handle shop-drawing collaboration with the city's architects and developers — New World, Sun Hung Kai, MTR Corporation, Wheelock, Wang On.",
       studioH2: "<em>47,000 m²</em>. <br />Huizhou, the easternmost<br />edge of the Greater <br />Bay Area.",
       studioP1:
         "Dongpai's <em>flagship plant in Huizhou</em> spans 47,000 m² — laser cutting, brake forming, robotic welding, anodising and final finishing all under one roof. Together with our Dongguan partner Changlei (12,000 m²), the group delivers façade and structural metalwork at the scale Hong Kong podium projects demand.",
       studioP2:
-        "Every project begins the same way — with a drawing, a 1:1 mock-up and a long meeting with the client and architect. We don't subcontract the parts that matter.",
+        "Every project begins the same way — with a drawing reviewed at our Hong Kong office, a 1:1 mock-up erected in Huizhou, and a long meeting with the client and architect. We don't subcontract the parts that matter.",
       equip1Name: "Laser Cutting Cell",
       equip2Name: "Laser Tube Cutting",
       equip3Name: "500-Ton Press Brake",
       equip4Name: "Robotic Welding Cell",
+
+      logisticTitle: "Two hours from <em>any HK site</em>. <br />Two plants, one route.",
+      logisticP:
+        "Our Huizhou flagship and Dongguan partner workshop sit <em>16 km apart</em> on the eastern edge of the Greater Bay Area. From either loading dock to the Hong Kong border, it is around <em>two hours</em>. Most components leave our gate in the morning, clear the border by noon and are on site the next day — under a single bill of lading coordinated from our Hong Kong offices in Tsuen Wan and Kwun Tong.",
+
+      certTitle: "Engineered to <em>EN&nbsp;1090-2 · EXC3</em>.",
+      certLead:
+        "Our structural steel and curtain-wall fabrication is certified to the European norm <strong>EN&nbsp;1090-2 Execution Class EXC3</strong> — the class reserved for <em>complex structures</em>: high-rise façades, structures with seismic, fatigue or wind-fatigue loading, and elements where failure has serious safety consequences. It is the same execution class specified for landmark super-tall curtain-wall projects across Europe and Asia where façade failure would have public-safety consequences.",
 
       processTitle: "Drawing. Mock-up. <em>Then</em> production.",
       process1Title: "Shop Drawing",
@@ -138,6 +156,8 @@
       contactTitle: "Send us a drawing. <br />We'll send back a <em>mock-up</em>.",
       contactCopy:
         "If you're an architect, curtain-wall consultant or main contractor with a façade in scope, we'd like to see your drawings. We respond to enquiries within two business days — usually with a question, a clarification, and a rough capacity slot.",
+      contactSingleKey: "One contact · four entities · two plants · two HK offices.",
+      contactSingleNote: 'For the full group structure — Huizhou flagship, Dongguan workshop, Hong Kong sales &amp; engineering offices — see <a href="#studio">Group Structure ↗</a>',
       contactLabelHZ: "Flagship Plant · Huizhou",
       contactLabelDG: "Original Workshop · Dongguan",
       contactLabelHKsales: "HK Sales · Tsuen Wan",
@@ -167,6 +187,13 @@
       footerHZ: "Zhongkai High-tech Zone, Huizhou",
       footerDG: "Xiegang Town, Dongguan",
       footerMotto: "Craftsmanship builds dreams · Intelligence shapes the future",
+      railTel: "Tel",
+      railWhatsApp: "WhatsApp",
+      railWeChat: "WeChat",
+      railWeChatScan: "Scan WeChat",
+      railWeChatQr: "QR · 9667 0869",
+      railEmail: "Email",
+      railTop: "Top",
       backTop: "Back to Top ↑",
       work1H3: "Deep Water Pavilia",
       work2H3: "Cullinan Harbour",
@@ -199,7 +226,7 @@
       heroScroll: "向下",
       metricYears: "自 2012 年成立",
       metricArea: "惠州旗艦廠面積",
-      metricTeam: "在職工匠團隊",
+      metricTeam: "惠州 · 東莞 · 2× 香港",
       metricFlats: "已交付公寓數 · 港 / 大灣區",
 
       manifestoKicker: "№ 01 — 我們的信念",
@@ -265,13 +292,23 @@
       archiveTitle: "一份<em>部分專案記錄</em>。",
       archiveFootP: "持續更新——十三年累計交付<em>1,500+ 戶</em>。",
       archiveFootCta: "索取完整專案清單",
+      archHdrYear: "年份",
+      archHdrProject: "專案",
+      archHdrClient: "業主",
+      archHdrArchitect: "建築師",
+      archHdrScope: "範圍",
+      archLabelClient: "業主",
+      archLabelArchitect: "建築師",
+      archLabelScope: "範圍",
 
-      studioTitle: '一間<em>工匠 Atelier</em>，工廠的規模。',
+      studioTitle: '四家法人，<em>一張外立面</em>。',
+      studioLead:
+        "東排金屬——大灣區金屬製造集團，由四家法人組成、以一張交付合同對外供貨。<em>47,000 平方米的旗艦廠</em>位於惠州；<em>長磊五金</em>，12,000 平方米的創始車間，運營於東莞；<em>香港銷售辦事處</em>（荃灣）與<em>工程辦事處</em>（觀塘）負責與本地建築師、開發商深化圖紙——新世界、新鴻基、港鐵、會德豐、宏安。",
       studioH2: "<em>47,000 平方米</em>。<br />惠州——大灣區東緣，<br />距香港口岸兩小時。",
       studioP1:
         "東排的<em>惠州旗艦廠</em>佔地 47,000 平方米——雷射切割、折彎、機械手焊接、陽極氧化、終飾，全部在一個屋頂下。配合東莞長磊夥伴工廠（12,000 平方米），集團能以香港頂級平臺專案所需的規模交付幕牆與結構金屬。",
       studioP2:
-        "每個專案都以同一種方式開始——一張圖紙、一塊 1:1 樣板，與客戶和建築師的一場長會議。重要的部分，我們從不外包。",
+        "每個專案都以同一種方式開始——在香港辦事處審圖、惠州廠房 1:1 樣板、與客戶和建築師的一場長會議。重要的部分，我們從不外包。",
       equip1Name: "雷射切割",
       equip2Name: "管材雷射切割",
       equip3Name: "500 噸折彎",
@@ -324,6 +361,13 @@
       footerDG: "東莞市謝崗鎮",
       footerMotto: "匠心築夢 · 智造未來",
       footerMottoCN: "匠心築夢 · 智造未來",
+      railTel: "電話",
+      railWhatsApp: "WhatsApp",
+      railWeChat: "微信",
+      railWeChatScan: "掃描加微信",
+      railWeChatQr: "微信號 · 9667 0869",
+      railEmail: "電郵",
+      railTop: "返頂",
       footerMottoCN2: "乘風破浪 · 逐夢遠航",
       backTop: "返回頂部 ↑",
 
@@ -369,7 +413,7 @@
       groupLoc: "地點",
       groupRole: "職能",
       group1Role: "旗艦生產主體——幕牆、欄杆、結構件加工、陽極氧化生產線。2022 年建立。",
-      group2Role: "創始工廠——不鏽鋼裝飾、特色牆與吊頂、1:1 樣板組裝。2014 年成立，集團起源 2009。",
+      group2Role: "創始工廠——不鏽鋼裝飾、特色牆與吊頂、1:1 樣板組裝。2014 年成立；集團淵源可追溯至 2012 年成立的澤正金屬。",
       group3Role: "香港銷售法人——銷售、開票、港 / 澳 / 海外專案客戶對接。",
       group4Role: "香港幕牆工程法人——深化圖紙、現場監理、樣板簽字。2016 年起。",
 
@@ -395,9 +439,9 @@
       studioCta: "預約參觀工廠",
 
       /* ─── Logistic ─── */
-      logisticTitle: "<em>兩小時</em>到香港任何工地。<br />三廠一條路。",
+      logisticTitle: "<em>兩小時</em>到香港任何工地。<br />兩廠一條路。",
       logisticP:
-        "惠州旗艦廠與東莞協作工廠僅<em>相距 16 公里</em>，位於大灣區東緣。從任一裝車碼頭到香港口岸約 <em>兩小時</em>。多數構件早晨發車，中午過關，次日上工地——由香港長沙灣辦事處統一齣貨單。",
+        "惠州旗艦廠與東莞協作工廠僅<em>相距 16 公里</em>，位於大灣區東緣。從任一裝車碼頭到香港口岸約 <em>兩小時</em>。多數構件早晨發車，中午過關，次日上工地——由香港荃灣與觀塘辦事處統一協調出貨單。",
       logisticH1: "惠州 ↔ 東莞",
       logisticT1: "約 0.5 小時",
       logisticH2: "惠州 → 深圳",
@@ -424,7 +468,7 @@
       /* ─── Certification ─── */
       certTitle: "按 <em>EN 1090-2 · EXC3</em> 標準執行。",
       certLead:
-        "結構鋼與幕牆加工已通過歐洲規範 <strong>EN 1090-2 執行等級 EXC3</strong> 認證——專門為<em>複雜結構</em>預留的等級：高層建築外立面、抗震 / 抗疲勞 / 抗風疲勞的結構件，以及失效後果嚴重的構件。同等級要求適用於倫敦 The Shard 與法蘭克福 Commerzbank 大廈的幕牆。",
+        "結構鋼與幕牆加工已通過歐洲規範 <strong>EN 1090-2 執行等級 EXC3</strong> 認證——專門為<em>複雜結構</em>預留的等級：高層建築外立面、抗震 / 抗疲勞 / 抗風疲勞的結構件，以及失效後果嚴重的構件。歐亞各地超高層幕牆專案中，凡是外立面失效會危及公共安全的，均要求此執行等級。",
       certCap: "EN 1090-2 EXC3 — 複雜結構",
       certV1: "最高執行等級 · 適用於含疲勞、抗震或高後果荷載的幕牆與結構件。",
       certV2: "CE 標識合規 · 焊接工藝規範、無損檢測記錄、按板件追溯材料。",
@@ -432,7 +476,7 @@
       certV4: "符合屋宇署風荷載與排風規範，可按需求做第三方測試。",
 
       /* ─── Contact single ─── */
-      contactSingleKey: "一個對接人 · 四家法人 · 三個工廠。",
+      contactSingleKey: "一個對接人 · 四家法人 · 兩個工廠 · 兩個香港辦事處。",
       contactSingleNote: "完整集團架構——惠州旗艦廠、東莞協作工廠、香港銷售與工程辦公室——請見 <a href=\"#studio\">集團架構 ↗</a>",
 
       /* ─── Footer (minimal) ─── */
@@ -546,13 +590,23 @@
       archiveTitle: "一份<em>部分项目记录</em>。",
       archiveFootP: "持续更新——十三年累计交付<em>1,500+ 户</em>。",
       archiveFootCta: "索取完整项目清单",
+      archHdrYear: "年份",
+      archHdrProject: "项目",
+      archHdrClient: "业主",
+      archHdrArchitect: "建筑师",
+      archHdrScope: "范围",
+      archLabelClient: "业主",
+      archLabelArchitect: "建筑师",
+      archLabelScope: "范围",
 
-      studioTitle: '一间<em>工匠 Atelier</em>，工厂的规模。',
+      studioTitle: '四家法人，<em>一张外立面</em>。',
+      studioLead:
+        "东排金属——大湾区金属制造集团，由四家法人组成、以一张交付合同对外供货。<em>47,000 平方米的旗舰厂</em>位于惠州；<em>长磊五金</em>，12,000 平方米的原始车间，运营于东莞；<em>香港销售办事处</em>（荃湾）与<em>工程办事处</em>（观塘）负责与本地建筑师、开发商深化图纸——新世界、新鸿基、港铁、会德丰、宏安。",
       studioH2: "<em>47,000 平方米</em>。<br />惠州——大湾区东缘，<br />距香港口岸两小时。",
       studioP1:
         "东排的<em>惠州旗舰厂</em>占地 47,000 平方米——激光切割、折弯、机械手焊接、阳极氧化、终饰，全部在一个屋顶下。配合东莞长磊伙伴工厂（12,000 平方米），集团能以香港顶级平台项目所需的规模交付幕墙与结构金属。",
       studioP2:
-        "每个项目都以同一种方式开始——一张图纸、一块 1:1 样板，与客户和建筑师的一场长会议。重要的部分，我们从不外包。",
+        "每个项目都以同一种方式开始——在香港办事处审图、惠州厂房 1:1 样板、与客户和建筑师的一场长会议。重要的部分，我们从不外包。",
       equip1Name: "激光切割",
       equip2Name: "管材激光切割",
       equip3Name: "500 吨折弯",
@@ -605,6 +659,13 @@
       footerDG: "东莞市谢岗镇",
       footerMotto: "匠心筑梦 · 智造未来",
       footerMottoCN: "匠心筑梦 · 智造未来",
+      railTel: "电话",
+      railWhatsApp: "WhatsApp",
+      railWeChat: "微信",
+      railWeChatScan: "扫描加微信",
+      railWeChatQr: "微信号 · 9667 0869",
+      railEmail: "邮箱",
+      railTop: "返顶",
       footerMottoCN2: "乘风破浪 · 逐梦远航",
       backTop: "返回顶部 ↑",
 
@@ -650,7 +711,7 @@
       groupLoc: "地点",
       groupRole: "职能",
       group1Role: "旗舰生产主体——幕墙、栏杆、结构件加工、阳极氧化生产线。2022 年建立。",
-      group2Role: "创始工厂——不锈钢装饰、特色墙与吊顶、1:1 样板组装。2014 年成立，集团起源 2009。",
+      group2Role: "创始工厂——不锈钢装饰、特色墙与吊顶、1:1 样板组装。2014 年成立；集团渊源可追溯至 2012 年成立的泽正金属。",
       group3Role: "香港销售法人——销售、开票、港 / 澳 / 海外项目客户对接。",
       group4Role: "香港幕墙工程法人——深化图纸、现场监理、样板签字。2016 年起。",
 
@@ -676,9 +737,9 @@
       studioCta: "预约参观工厂",
 
       /* ─── Logistic ─── */
-      logisticTitle: "<em>两小时</em>到香港任何工地。<br />三厂一条路。",
+      logisticTitle: "<em>两小时</em>到香港任何工地。<br />两厂一条路。",
       logisticP:
-        "惠州旗舰厂与东莞协作工厂仅<em>相距 16 公里</em>，位于大湾区东缘。从任一装车码头到香港口岸约 <em>两小时</em>。多数构件早晨发车，中午过关，次日上工地——由香港长沙湾办事处统一出货单。",
+        "惠州旗舰厂与东莞协作工厂仅<em>相距 16 公里</em>，位于大湾区东缘。从任一装车码头到香港口岸约 <em>两小时</em>。多数构件早晨发车，中午过关，次日上工地——由香港荃湾与观塘办事处统一协调出货单。",
       logisticH1: "惠州 ↔ 东莞",
       logisticT1: "约 0.5 小时",
       logisticH2: "惠州 → 深圳",
@@ -705,7 +766,7 @@
       /* ─── Certification ─── */
       certTitle: "按 <em>EN 1090-2 · EXC3</em> 标准执行。",
       certLead:
-        "结构钢与幕墙加工已通过欧洲规范 <strong>EN 1090-2 执行等级 EXC3</strong> 认证——专门为<em>复杂结构</em>预留的等级：高层建筑外立面、抗震 / 抗疲劳 / 抗风疲劳的结构件，以及失效后果严重的构件。同等级要求适用于伦敦 The Shard 与法兰克福 Commerzbank 大厦的幕墙。",
+        "结构钢与幕墙加工已通过欧洲规范 <strong>EN 1090-2 执行等级 EXC3</strong> 认证——专门为<em>复杂结构</em>预留的等级：高层建筑外立面、抗震 / 抗疲劳 / 抗风疲劳的结构件，以及失效后果严重的构件。欧亚各地超高层幕墙项目中，凡是外立面失效会危及公共安全的，均要求此执行等级。",
       certCap: "EN 1090-2 EXC3 — 复杂结构",
       certV1: "最高执行等级 · 适用于含疲劳、抗震或高后果荷载的幕墙与结构件。",
       certV2: "CE 标识合规 · 焊接工艺规范、无损检测记录、按板件追溯材料。",
@@ -713,7 +774,7 @@
       certV4: "符合屋宇署风荷载与排风规范，可按需求做第三方测试。",
 
       /* ─── Contact single ─── */
-      contactSingleKey: "一个对接人 · 四家法人 · 三个工厂。",
+      contactSingleKey: "一个对接人 · 四家法人 · 两个工厂 · 两个香港办事处。",
       contactSingleNote: "完整集团架构——惠州旗舰厂、东莞协作工厂、香港销售与工程办公室——请见 <a href=\"#studio\">集团架构 ↗</a>",
 
       /* ─── Footer (minimal) ─── */
@@ -764,6 +825,10 @@
     } else {
       document.documentElement.setAttribute("dir", "ltr");
     }
+    // body class for CSS-level EN/繁 inline-span toggling (archive table etc.)
+    document.body.className = document.body.className
+      .replace(/\blang-[a-z-]+\b/g, "")
+      .trim() + " lang-" + lang;
     document.title = t.title;
     const meta = document.querySelector('meta[name="description"]');
     if (meta && t.description) meta.setAttribute("content", t.description);

@@ -7,3 +7,8 @@ node_modules/
 
 # Source PDF originals (huge, keep local)
 "东排*.pdf"
+
+# Internal docs / briefs (never publish to client-facing repo)
+dongpai-brief.txt
+*.brief.txt
+*.notes.txt

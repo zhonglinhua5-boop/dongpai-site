@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 · Page not found · Dongpai Metal</title>
+    <meta name="description" content="The page you're looking for has moved or never existed. Return to Dongpai Metal — architectural metalworks atelier for Hong Kong's skyline." />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/styles.css?v=34" />
+    <style>
+      .nf-wrap {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 60px 24px;
+        text-align: center;
+        background: var(--paper);
+        color: var(--text);
+      }
+      .nf-num {
+        font-family: var(--font-display);
+        font-weight: 200;
+        font-size: clamp(120px, 22vw, 280px);
+        line-height: 0.9;
+        letter-spacing: -0.04em;
+        color: var(--bronze-1);
+        font-variation-settings: "opsz" 144, "SOFT" 100;
+        margin: 0;
+      }
+      .nf-title {
+        font-family: var(--font-display);
+        font-weight: 300;
+        font-size: clamp(28px, 4vw, 48px);
+        margin: 24px 0 12px;
+        max-width: 720px;
+      }
+      .nf-copy {
+        font-size: 16px;
+        max-width: 560px;
+        color: var(--text-dim);
+        line-height: 1.6;
+        margin: 0 0 36px;
+      }
+      .nf-actions {
+        display: inline-flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .nf-brand {
+        position: absolute;
+        top: 28px;
+        left: 28px;
+        font-family: var(--font-display);
+        font-size: 18px;
+        text-decoration: none;
+        color: var(--text);
+      }
+      .nf-brand:hover { color: var(--bronze-1); }
+    </style>
+  </head>
+  <body>
+    <a class="nf-brand" href="/">Dongpai Metal ↘</a>
+    <div class="nf-wrap">
+      <p class="nf-num">404</p>
+      <h1 class="nf-title">This page has moved — or was never here.</h1>
+      <p class="nf-copy">
+        Try the homepage, browse our Selected Work, or contact us directly. We respond to enquiries within two business days.
+      </p>
+      <div class="nf-actions">
+        <a class="btn btn-primary" href="/"><span>Home</span><span class="arrow">→</span></a>
+        <a class="btn" href="/#work"><span>Selected Work</span><span class="arrow">→</span></a>
+        <a class="btn" href="/#contact"><span>Contact</span><span class="arrow">↗</span></a>
+      </div>
+    </div>
+  </body>
+</html>
