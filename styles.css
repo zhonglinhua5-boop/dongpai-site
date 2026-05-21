@@ -3837,3 +3837,210 @@ body.lang-zh-hans .group-motto > span,
 body.lang-zh .group-motto > span {
   display: none;
 }
+
+/* ═════════════════════════════════════════════════════════════
+   Editorial layout rev (visual-designer pass) — 5 sections
+   ═════════════════════════════════════════════════════════════ */
+
+/* ── HERO: 100svh full screen, veil bottom-only ──────────────── */
+.hero {
+  height: 100svh;
+  min-height: 700px !important;
+  max-height: 1200px !important;
+  padding: clamp(80px, 10vh, 120px) var(--gutter) clamp(60px, 8vh, 100px) !important;
+}
+.hero-media .hero-img {
+  object-position: center 20%;
+  filter: contrast(1.10) saturate(0.72) brightness(0.90);
+}
+.hero-veil {
+  background:
+    linear-gradient(180deg,
+      rgba(246, 241, 227, 0.04) 0%,
+      rgba(246, 241, 227, 0.08) 40%,
+      rgba(246, 241, 227, 0.60) 72%,
+      rgba(246, 241, 227, 0.96) 100%),
+    linear-gradient(90deg,
+      rgba(246, 241, 227, 0.72) 0%,
+      rgba(246, 241, 227, 0.10) 55%);
+}
+
+/* ── CAPABILITIES: 1 hero card + 2x2 sub-grid ────────────────── */
+.products-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(16px, 2vw, 28px);
+  margin-top: clamp(32px, 4vh, 56px);
+}
+@media (min-width: 900px) {
+  .products-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.85fr);
+    align-items: stretch;
+  }
+}
+@media (min-width: 1280px) {
+  /* override earlier 5-col rule from previous pass */
+  .products-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1.85fr) !important; }
+}
+.product-card--hero {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  position: relative;
+}
+.product-card--hero .product-img {
+  aspect-ratio: unset;
+  height: 100%;
+  min-height: 420px;
+}
+.products-sub-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: clamp(12px, 1.5vw, 20px);
+}
+.product-img {
+  position: relative;
+  overflow: hidden;
+  background: var(--paper-3);
+  aspect-ratio: unset !important;
+  min-height: 180px;
+}
+.product-img img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(0.15) contrast(1.04);
+  transition: transform 700ms var(--easing), filter 600ms var(--easing);
+}
+.product-card:hover .product-img img {
+  transform: scale(1.04);
+  filter: grayscale(0) contrast(1.06);
+}
+.products-sub-grid .product-img {
+  height: 200px;
+  min-height: unset;
+}
+@media (min-width: 1200px) {
+  .products-sub-grid .product-img { height: 240px; }
+}
+.products-sub-grid .product-info {
+  padding: 12px 2px 14px;
+}
+.products-sub-grid .product-title {
+  font-size: clamp(18px, 1.6vw, 22px);
+}
+.products-sub-grid .product-desc {
+  display: none;
+}
+@media (min-width: 1400px) {
+  .products-sub-grid .product-desc { display: block; font-size: 13px; }
+}
+@media (max-width: 899px) {
+  .products-sub-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; }
+  .products-sub-grid .product-img { height: 160px; }
+}
+@media (max-width: 600px) {
+  .products-sub-grid { grid-template-columns: 1fr; }
+  .product-card--hero .product-img { min-height: 320px; }
+}
+
+/* ── SELECTED WORK: portrait variant for 002/004 ───────────────── */
+.work-spread--portrait .work-img {
+  aspect-ratio: 3 / 4;
+}
+@media (min-width: 900px) {
+  .work-spread--portrait.flip {
+    grid-template-columns: 4fr 6fr;
+  }
+  .work-spread:not(.work-spread--portrait):not(.flip) {
+    grid-template-columns: 8fr 4fr;
+  }
+}
+.work-img img {
+  filter: grayscale(0.12) contrast(1.05);
+  transition: transform 1400ms var(--easing), filter 600ms var(--easing);
+}
+.work-spread:hover .work-img img {
+  transform: scale(1.04);
+  filter: grayscale(0) contrast(1.06);
+}
+
+/* ── STUDIO EQUIPMENT: 2 large + 2 small asymmetric ───────────── */
+.studio-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(20px, 2.5vw, 36px);
+}
+@media (min-width: 900px) {
+  .studio-grid {
+    grid-template-columns: 1.6fr 1fr 1.6fr;
+    align-items: start;
+  }
+}
+.equip-minor-group {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 2vw, 28px);
+}
+.equip--large .equip-img {
+  aspect-ratio: 16 / 9;
+}
+.equip:not(.equip--large) .equip-img {
+  aspect-ratio: 4 / 3;
+}
+.equip-img {
+  overflow: hidden;
+  background: var(--ink-2);
+  position: relative;
+}
+.equip-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.82) contrast(1.08);
+  transition: transform 1200ms var(--easing), filter 600ms var(--easing);
+}
+.equip:hover .equip-img img {
+  transform: scale(1.03);
+  filter: brightness(1) contrast(1.04);
+}
+@media (max-width: 899px) {
+  .equip-minor-group { flex-direction: row; }
+  .equip-minor-group .equip { flex: 1; }
+}
+
+/* ── CONTACT BANNER: full-width closing facade shot ─────────── */
+.contact {
+  padding-top: 0 !important;
+  overflow: hidden;
+}
+.contact-banner {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 5 / 2;
+  overflow: hidden;
+  max-height: 520px;
+}
+.contact-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  filter: brightness(0.80) contrast(1.08) saturate(0.75);
+}
+.contact-banner-veil {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    transparent 40%,
+    rgba(239, 233, 216, 0.70) 75%,
+    var(--paper-2) 100%
+  );
+}
+.contact-inner {
+  padding: clamp(48px, 7vh, 80px) var(--gutter) clamp(60px, 8vh, 100px);
+}
