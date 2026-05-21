@@ -3471,3 +3471,77 @@ html[lang*="zh"] .section-lead {
   color: var(--bronze);
   letter-spacing: -0.01em;
 }
+
+/* ═════════════════════════════════════════════════════════════
+   PROJECT PAGE — language toggle (single-language at a time)
+   ═════════════════════════════════════════════════════════════ */
+.project-page .proj-copy-en,
+.project-page .proj-copy-zh {
+  transition: opacity 240ms ease;
+}
+body.lang-en .proj-copy-zh,
+body.lang-en .zh-meta,
+body.lang-en .proj-subtitle {
+  display: none;
+}
+body.lang-zh .proj-copy-en {
+  display: none;
+}
+body.lang-zh .proj-fact dd { font-family: var(--font-chinese-display); font-weight: 400; }
+
+/* Hide quick-fact value English version when zh and the value has a zh-meta sibling */
+body.lang-zh .proj-fact dd > br + .zh-meta {
+  display: block;
+  font-family: var(--font-chinese-display);
+  font-size: 15px;
+  color: var(--ink);
+  margin-top: 0;
+}
+body.lang-zh .proj-fact dd > br {
+  display: none;
+}
+
+/* Stack EN line then make it visually hidden when zh active — keep for screen-reader */
+body.lang-zh .proj-fact dd { font-size: 0; }
+body.lang-zh .proj-fact dd .zh-meta { font-size: 15px; }
+body.lang-zh .proj-fact dd::before {
+  content: attr(data-zh-fallback);
+  font-size: 15px;
+}
+
+/* Cleaner: just hide the EN part of the dd, show the .zh-meta */
+body.lang-zh .proj-fact dd:not(:has(.zh-meta)) { font-size: 15px; }
+
+/* Project page nav bar — small EN/繁 toggle (top-right) */
+.proj-lang-switch {
+  position: fixed;
+  top: 28px;
+  right: 28px;
+  z-index: 60;
+  display: inline-flex;
+  border: 1px solid var(--rule-strong);
+  border-radius: 999px;
+  background: rgba(246, 241, 227, 0.92);
+  backdrop-filter: blur(12px);
+  padding: 4px;
+}
+.proj-lang-switch button {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  padding: 6px 12px;
+  border-radius: 999px;
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+.proj-lang-switch button.active {
+  background: var(--ink);
+  color: var(--paper);
+}
+.proj-lang-switch button:hover:not(.active) { color: var(--ink); }
+@media (max-width: 720px) {
+  .proj-lang-switch { top: 14px; right: 14px; padding: 3px; }
+  .proj-lang-switch button { font-size: 10px; padding: 5px 10px; }
+}

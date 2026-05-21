@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dongpaimetal.com/sitemap.xml
+Sitemap: https://zhonglinhua5-boop.github.io/dongpai-site/sitemap.xml

@@ -10,10 +10,15 @@
     <link rel="manifest" href="../manifest.webmanifest" />
     <meta name="theme-color" content="#f6f1e3" />
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://dongpaimetal.com/assets/site/hero-cinematic.webp" />
-    <link rel="stylesheet" href="../styles.css?v=32" />
+    <meta property="og:image" content="https://zhonglinhua5-boop.github.io/dongpai-site/assets/site/hero-cinematic.webp" />
+    <link rel="stylesheet" href="../styles.css?v=33" />
   </head>
   <body id="top" class="project-page">
+    <!-- Language toggle -->
+    <div class="proj-lang-switch" role="tablist" aria-label="Language">
+      <button type="button" data-lang="en" class="active" aria-pressed="true">EN</button>
+      <button type="button" data-lang="zh" aria-pressed="false">繁</button>
+    </div>
     <!-- minimal header -->
     <header class="site-header proj-header" data-elevated="true">
       <a class="brand" href="../" aria-label="Dongpai Metal — home">
@@ -67,8 +72,10 @@
         <div class="section-inner">
           <p class="kicker">— Gallery</p>
           <div class="proj-gallery-grid">
-              <figure class="proj-gallery-item"><img src="../assets/site/projects/deep-water-pavilia-alt.webp" alt="Deep Water Pavilia — view 1" /></figure>
-              <figure class="proj-gallery-item"><img src="../assets/site/projects/deep-water-pavilia.webp" alt="Deep Water Pavilia — view 2" /></figure>
+              <figure class="proj-gallery-item"><img src="../assets/site/projects/deep-water-pavilia-alt.webp" loading="lazy" alt="Deep Water Pavilia balcony — bronze handrail" /></figure>
+              <figure class="proj-gallery-item"><img src="../assets/site/projects/deep-water-pavilia.webp" loading="lazy" alt="Deep Water Pavilia tower elevation" /></figure>
+              <figure class="proj-gallery-item"><img src="../assets/site/projects/factory-layout.webp" loading="lazy" alt="Dongpai Huizhou flagship — fabrication" /></figure>
+              <figure class="proj-gallery-item"><img src="../assets/site/projects/logistic-map.webp" loading="lazy" alt="Logistic — 2 hrs from plant to HK site" /></figure>
           </div>
         </div>
       </section>
@@ -127,5 +134,27 @@
         <a href="#top">Back to Top ↑</a>
       </div>
     </footer>
+      <script>
+      (function(){
+        var saved = localStorage.getItem('cl-lang');
+        var lang = (saved && saved.indexOf('zh') === 0) ? 'zh' : 'en';
+        document.body.className = (document.body.className.replace(/\blang-[a-z]+\b/g,'') + ' lang-' + lang).trim();
+        document.documentElement.lang = (lang === 'zh') ? 'zh-Hant' : 'en';
+        document.querySelectorAll('.proj-lang-switch button').forEach(function(b){
+          b.classList.toggle('active', b.dataset.lang === lang);
+          b.setAttribute('aria-pressed', String(b.dataset.lang === lang));
+          b.addEventListener('click', function(){
+            var L = this.dataset.lang;
+            document.body.className = document.body.className.replace(/\blang-[a-z]+\b/g,'') + ' lang-' + L;
+            document.documentElement.lang = (L === 'zh') ? 'zh-Hant' : 'en';
+            localStorage.setItem('cl-lang', L === 'zh' ? 'zh-hant' : 'en');
+            document.querySelectorAll('.proj-lang-switch button').forEach(function(bb){
+              bb.classList.toggle('active', bb.dataset.lang === L);
+              bb.setAttribute('aria-pressed', String(bb.dataset.lang === L));
+            });
+          });
+        });
+      })();
+    </script>
   </body>
 </html>
