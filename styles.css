@@ -4,11 +4,10 @@
    Light editorial — warm paper, deep ink, bronze accent
    =========================================================== */
 
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+TC:wght@300;400;500;600&family=Noto+Sans+TC:wght@300;400;500&display=swap");
-
-/* LXGW WenKai TC (霞鶩文楷 · 繁體) — 正楷 webfont via jsDelivr CDN */
-@import url("https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.7.0/style.css");
-@import url("https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css");
+/* Fraunces (EN serif display) · Inter (EN sans body) · JetBrains Mono (mono labels)
+   Noto Serif TC/SC 700 (繁/简正式印刷宋体, 加重 weight 让大标题更端正)
+   Noto Sans TC (繁体正式无衬线, body 备用) */
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+TC:wght@300;400;500;600;700;900&family=Noto+Serif+SC:wght@300;400;500;600;700;900&family=Noto+Sans+TC:wght@300;400;500;600;700&display=swap");
 
 :root {
   /* Ink — deep warm charcoals for text */
@@ -40,11 +39,11 @@
   --rule-bronze: rgba(138, 107, 65, 0.32);
 
   /* Typography — Editorial serif (display) + grotesk (body) — Permasteelisa / Foster + Partners stack
-     Chinese script: LXGW WenKai TC / SC (霞鶩文楷 · 正楷 / 楷書) used for ALL Chinese text */
-  --font-display: "Fraunces", "LXGW WenKai TC", "LXGW WenKai", "Noto Serif TC", "Songti TC", Georgia, serif;
-  --font-sans: "Inter", "LXGW WenKai TC", "LXGW WenKai", "PingFang TC", "PingFang SC", "Hiragino Sans GB", Arial, sans-serif;
+     Chinese: Noto Serif TC/SC (思源宋体 · 正式印刷宋体). 不用楷书 — 楷书太"歪扭"显得不够正式 */
+  --font-display: "Fraunces", "Noto Serif TC", "Noto Serif SC", "Songti TC", "Songti SC", "Source Han Serif TC", Georgia, serif;
+  --font-sans: "Inter", "Noto Sans TC", "PingFang TC", "PingFang SC", "Hiragino Sans GB", Arial, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
-  --font-chinese-display: "LXGW WenKai TC", "LXGW WenKai", "Noto Serif TC", "Songti TC", "PingFang TC", serif;
+  --font-chinese-display: "Noto Serif TC", "Noto Serif SC", "Source Han Serif TC", "Songti TC", "PingFang TC", serif;
 
   /* Layout */
   --gutter: clamp(22px, 4.4vw, 64px);
@@ -2507,7 +2506,8 @@ body.lang-zh-hant .archive-row .arc-name .zh,
 body.lang-zh-hans .archive-row .arc-name .zh,
 body.lang-zh .archive-row .arc-name .zh {
   display: inline;
-  font-family: "LXGW WenKai TC", "LXGW WenKai", "Noto Serif TC", serif;
+  font-family: "Noto Serif TC", "Noto Serif SC", "Source Han Serif TC", serif;
+  font-weight: 500;
   color: var(--ink);
 }
 
@@ -3603,9 +3603,11 @@ body.lang-zh-hant .archive-row .arc-cell .zh-meta {
 body.lang-en .group-motto > span { display: none; }
 
 /* ═════════════════════════════════════════════════════════════
-   正楷 (LXGW WenKai TC) 全站中文专用 — 当 body.lang-zh-hant / lang-zh-hans
-   激活时，所有文本（除等宽和按钮 mono 风格）都用霞鹜文楷。
-   英文模式保留 Fraunces / Inter (即原设计)。
+   中文模式 · 正式印刷宋体 (Noto Serif TC/SC 思源宋体)
+   ----------------------------------------------------------------
+   不使用手写楷书 — 楷体笔画歪扭，不符合 B2B 工业品牌的正式调性。
+   思源宋体是端正的印刷宋体，与英文版 Fraunces 衬线匹配，
+   大标题用 600/700 weight 让字体厚重端正。
    ═════════════════════════════════════════════════════════════ */
 body.lang-zh-hant,
 body.lang-zh-hans,
@@ -3613,7 +3615,45 @@ body.lang-zh,
 body.lang-zh-hant *:not(.font-mono):not([class*="mono"]):not(code):not(pre),
 body.lang-zh-hans *:not(.font-mono):not([class*="mono"]):not(code):not(pre),
 body.lang-zh *:not(.font-mono):not([class*="mono"]):not(code):not(pre) {
-  font-family: "LXGW WenKai TC", "LXGW WenKai", "Noto Serif TC", "Songti TC", "PingFang TC", serif !important;
+  font-family: "Noto Serif TC", "Noto Serif SC", "Source Han Serif TC", "Songti TC", "PingFang TC", serif;
+}
+
+/* 大标题加重 weight 让中文字看起来更端正、更有分量 */
+body.lang-zh-hant h1,
+body.lang-zh-hant h2,
+body.lang-zh-hant h3,
+body.lang-zh-hant .hero-title,
+body.lang-zh-hant .section-title,
+body.lang-zh-hant .proj-title,
+body.lang-zh-hant .display,
+body.lang-zh-hans h1,
+body.lang-zh-hans h2,
+body.lang-zh-hans h3,
+body.lang-zh-hans .hero-title,
+body.lang-zh-hans .section-title,
+body.lang-zh-hans .proj-title,
+body.lang-zh-hans .display {
+  font-family: "Noto Serif TC", "Noto Serif SC", "Source Han Serif TC", "Songti TC", serif;
+  font-weight: 600;
+  font-variation-settings: normal;
+  letter-spacing: 0.02em;
+}
+
+/* H1 hero — 大点儿、再厚一点儿 */
+body.lang-zh-hant .hero-title,
+body.lang-zh-hans .hero-title {
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+}
+
+/* em (强调) 在中文模式不再用 italic — 中文没有斜体, italic 反而歪斜 */
+body.lang-zh-hant em,
+body.lang-zh-hans em,
+body.lang-zh em {
+  font-style: normal;
+  color: var(--bronze-1);
+  font-weight: inherit;
 }
 
 /* keep numeric / mono labels in their original mono font even in 繁/简 mode */
@@ -3635,7 +3675,7 @@ body.lang-zh-hans .work-img-tag,
 body.lang-zh-hans .group-tag,
 body.lang-zh-hans .arc-year,
 body.lang-zh-hans .footer-bottom {
-  font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace !important;
+  font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
 }
 
 /* ═════════════════════════════════════════════════════════════
