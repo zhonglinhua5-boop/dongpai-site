@@ -3049,32 +3049,35 @@ html[lang*="zh"] .work-img-link::after {
 
 .hero-title {
   font-family: var(--font-display);
-  font-weight: 300;
-  font-size: clamp(72px, 11vw, 200px);
-  line-height: 0.92;
-  letter-spacing: -0.035em;
+  font-weight: 400;
+  font-size: clamp(56px, 8vw, 132px);
+  line-height: 1.0;
+  letter-spacing: -0.02em;
   color: var(--ink);
-  font-variation-settings: "opsz" 144, "SOFT" 25;
+  font-variation-settings: "opsz" 60;
   margin-top: clamp(40px, 6vh, 80px);
-  max-width: 14ch;
+  max-width: 16ch;
 }
 .hero-title .line { display: block; }
 .hero-title em {
-  font-style: italic;
+  /* 不再 italic — 大字 italic 在 Source Serif 4 下显得歪斜不正式
+     改成同字体 + weight 加重 + bronze 重点色 */
+  font-style: normal;
+  font-weight: 600;
   color: var(--bronze);
-  font-variation-settings: "opsz" 144, "SOFT" 70;
+  font-variation-settings: "opsz" 60;
 }
 
-/* Chinese hero — heavier weight + tighter line-height for Noto Serif SC fallback */
+/* Chinese hero — Noto Serif TC, weight 700 for 端正 feel */
 :lang(zh) .hero-title,
 [lang="zh-Hans"] .hero-title,
 [lang="zh-Hant"] .hero-title,
 html[lang*="zh"] .hero-title {
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: 0.02em;
-  line-height: 1.04;
-  font-size: clamp(60px, 9.5vw, 168px);
-  max-width: 9ch;
+  line-height: 1.06;
+  font-size: clamp(52px, 8vw, 128px);
+  max-width: 10ch;
 }
 
 .hero-eyebrow {

@@ -189,6 +189,7 @@
       formOpt5: "Mixed scope / not sure",
       formBrief: "Brief",
       formSubmit: "Send enquiry ↗",
+      formSending: "Sending… ↗",
       inquirySubject: "Project enquiry — Dongpai Metal",
       footerSub: "Dongpai Metal · Dongpai Metal (HK)",
       footerTagline:
@@ -459,6 +460,7 @@
       formOpt5: "混合範疇 / 待定",
       formBrief: "簡述",
       formSubmit: "傳送詢價 ↗",
+      formSending: "傳送中… ↗",
       inquirySubject: "專案詢價——東排金屬",
       footerSub: "東排金屬 · 東排金屬（香港）",
       footerTagline:
@@ -790,6 +792,7 @@
       formOpt5: "混合范畴 / 待定",
       formBrief: "简述",
       formSubmit: "发送询价 ↗",
+      formSending: "发送中… ↗",
       inquirySubject: "项目询价——东排金属",
       footerSub: "东排金属 · 东排金属（香港）",
       footerTagline:
@@ -1061,30 +1064,24 @@
     });
   });
 
-  /* ───────── Enquiry form → mailto ───────── */
+  /* ───────── Enquiry form
+     The form's HTML now POSTs natively to https://formsubmit.co/cikf666@163.com
+     (form action). FormSubmit forwards each submission as an email to that
+     address and redirects the browser to /thanks.html on success.
+     No JS handler needed — native form behavior is more reliable across
+     mobile + WeChat in-app browsers.
+     We only inject a button label change on submit for instant UX feedback. */
   const form = document.getElementById("enquiry-form");
   if (form) {
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const fd = new FormData(form);
+    const submitBtn = form.querySelector("button[type='submit']");
+    form.addEventListener("submit", () => {
+      if (!submitBtn) return;
       const lang = document.documentElement.lang || "en";
-      const norm = lang.toLowerCase().startsWith("zh-hant") ? "zh-hant" : lang.toLowerCase().startsWith("zh") ? "zh-hans" : "en";
-      const subjectRoot = dict[norm].inquirySubject;
-      const subject = `${subjectRoot} — ${fd.get("project") || fd.get("name") || ""}`.trim();
-      const bodyLines = [
-        `Name / Company: ${fd.get("name") || ""}`,
-        `Email: ${fd.get("email") || ""}`,
-        `Project: ${fd.get("project") || ""}`,
-        `Scope: ${fd.get("scope") || ""}`,
-        "",
-        "Brief:",
-        fd.get("message") || "",
-        "",
-        "—",
-        "Sent from changqing-metal.com",
-      ];
-      const mailto = `mailto:info@changqing-metal.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join("\n"))}`;
-      window.location.href = mailto;
+      const norm = lang.toLowerCase().startsWith("zh-hant") ? "zh-hant"
+        : lang.toLowerCase().startsWith("zh") ? "zh-hans" : "en";
+      const sendingTxt = (dict[norm] && dict[norm].formSending) || "Sending…";
+      submitBtn.textContent = sendingTxt;
+      submitBtn.disabled = true;
     });
   }
 

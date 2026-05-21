@@ -44,7 +44,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="styles.css?v=39" />
+    <link rel="stylesheet" href="styles.css?v=40" />
 
     <!-- Schema.org BreadcrumbList for SEO -->
     <script type="application/ld+json">
@@ -1217,7 +1217,25 @@
             </ul>
           </div>
 
-          <form class="enquiry" id="enquiry-form" data-reveal>
+          <!--
+            Enquiry form → POST to FormSubmit.co (free, no-signup form backend)
+            On first real submission to cikf666@163.com, FormSubmit sends an
+            activation email to that address with a click-to-confirm link.
+            After confirmation, all subsequent submissions auto-forward as
+            emails to cikf666@163.com (subject set by _subject, body in
+            table format via _template=table).
+            _next: redirect after successful POST.
+            _captcha=false: skip FormSubmit's default captcha (we trust direct B2B).
+            _honey: hidden honeypot field — bots fill it, humans don't.
+          -->
+          <form class="enquiry" id="enquiry-form" data-reveal
+                action="https://formsubmit.co/cikf666@163.com"
+                method="POST">
+            <input type="hidden" name="_subject" value="New enquiry · dongpaimetal.com" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_next" value="https://dongpaimetal.com/thanks.html" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
             <div class="enquiry-head">
               <h3 data-i18n="enquiryTitle">New Enquiry</h3>
               <span data-i18n="enquiryTag">№ 12 / Response within 2 days</span>
@@ -1333,7 +1351,7 @@
       </div>
     </footer>
 
-    <script src="script.js?v=36"></script>
+    <script src="script.js?v=40"></script>
 
     <!-- Google Analytics 4 stub — replace G-XXXXXXXXXX with the real measurement ID before un-commenting.
          Left disabled until a real GA4 property is provisioned so that no broken tag fires on production.
