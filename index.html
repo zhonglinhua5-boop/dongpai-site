@@ -44,7 +44,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="styles.css?v=43" />
+    <link rel="stylesheet" href="styles.css?v=44" />
 
     <!-- Schema.org BreadcrumbList for SEO -->
     <script type="application/ld+json">
@@ -158,12 +158,11 @@
     <main>
       <!-- ════════ HERO ════════ -->
       <section class="hero">
-        <!-- Hero media: Ken Burns rotating gallery — drop-in <video> when real b-roll arrives -->
-        <div class="hero-media" aria-hidden="true">
-          <img src="assets/site/hero-cinematic.webp?v=34" class="hero-img" alt="" width="2400" height="2217" />
-          <img src="assets/site/projects/cullinan-harbour.webp" class="hero-img" alt="" loading="lazy" width="2000" height="813" />
-          <img src="assets/site/projects/deep-water-pavilia-alt.webp" class="hero-img" alt="" loading="lazy" width="2000" height="813" />
-          <img src="assets/site/hero-facade.webp" class="hero-img" alt="" loading="lazy" width="2175" height="826" />
+        <!-- Hero media: single static cinematic image with subtle Ken Burns zoom.
+             Previously rotated 4 images including the busy factory collage which
+             made the hero feel like a slideshow ad. -->
+        <div class="hero-media hero-media-single" aria-hidden="true">
+          <img src="assets/site/hero-cinematic.webp?v=34" class="hero-img is-active" alt="" width="2400" height="2217" />
         </div>
         <div class="hero-veil" aria-hidden="true"></div>
 

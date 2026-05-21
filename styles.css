@@ -2035,10 +2035,11 @@ section {
 }
 
 .cert-doc {
-  background: #ffffff;
+  background: transparent;
   padding: clamp(18px, 2vw, 30px) clamp(18px, 2vw, 30px) clamp(14px, 1.4vw, 22px);
-  border: 1px solid var(--rule-strong);
-  box-shadow: 0 24px 64px -22px rgba(40, 30, 20, 0.22);
+  border: 0;
+  border-bottom: 1px solid var(--rule);
+  box-shadow: none;
 }
 .cert-doc img {
   display: block;
@@ -2117,9 +2118,10 @@ section {
 .product-card {
   display: flex;
   flex-direction: column;
-  background: #ffffff;
-  border: 1px solid var(--rule-strong);
-  border-radius: 2px;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--rule);
+  border-radius: 0;
   overflow: hidden;
   transition:
     transform 380ms var(--easing),
@@ -2129,7 +2131,7 @@ section {
 .product-card:hover {
   transform: translateY(-4px);
   border-color: var(--rule-bronze);
-  box-shadow: 0 30px 60px -25px rgba(40, 30, 20, 0.20);
+  box-shadow: none;
 }
 
 .product-img {
@@ -2166,10 +2168,10 @@ section {
 }
 
 .product-info {
-  padding: clamp(16px, 1.4vw, 22px);
+  padding: 16px 2px 18px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
   flex: 1;
 }
 .product-title {
@@ -2831,9 +2833,10 @@ html[lang*="zh"] .work-img-link::after {
 }
 
 .group-card {
-  background: #ffffff;
-  border: 1px solid var(--rule-strong);
-  border-radius: 2px;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--rule);
+  border-radius: 0;
   padding: clamp(28px, 3vw, 40px);
   display: flex;
   flex-direction: column;
@@ -2846,7 +2849,7 @@ html[lang*="zh"] .work-img-link::after {
 .group-card:hover {
   border-color: var(--rule-bronze);
   transform: translateY(-4px);
-  box-shadow: 0 24px 50px -25px rgba(40, 30, 20, 0.20);
+  box-shadow: none;
 }
 
 .group-card.group-primary {
@@ -3405,9 +3408,10 @@ html[lang*="zh"] .section-lead {
 }
 
 .adv-card {
-  background: #ffffff;
-  border: 1px solid var(--rule-strong);
-  border-radius: 2px;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--rule);
+  border-radius: 0;
   padding: clamp(20px, 2vw, 28px);
   display: flex;
   flex-direction: column;
@@ -3420,7 +3424,7 @@ html[lang*="zh"] .section-lead {
 .adv-card:hover {
   border-color: var(--rule-bronze);
   transform: translateY(-4px);
-  box-shadow: 0 24px 50px -25px rgba(40, 30, 20, 0.20);
+  box-shadow: none;
 }
 
 .adv-head {
@@ -3707,15 +3711,15 @@ body.lang-zh-hans .footer-bottom {
 }
 
 .contact-entity {
-  padding: clamp(18px, 2.2vw, 28px);
-  background: var(--paper-2);
-  border: 1px solid var(--rule);
-  border-radius: 4px;
-  transition: border-color 280ms var(--easing), transform 280ms var(--easing);
+  padding: 18px 0;
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--rule);
+  border-radius: 0;
+  transition: none;
 }
-.contact-entity:hover {
-  border-color: var(--bronze);
-  transform: translateY(-2px);
+.contact-entities .contact-entity:nth-last-child(-n+2) {
+  border-bottom: 1px solid var(--rule);
 }
 
 .ce-tag {
