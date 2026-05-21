@@ -6,6 +6,10 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+TC:wght@300;400;500;600&family=Noto+Sans+TC:wght@300;400;500&display=swap");
 
+/* LXGW WenKai TC (霞鶩文楷 · 繁體) — 正楷 webfont via jsDelivr CDN */
+@import url("https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.7.0/style.css");
+@import url("https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css");
+
 :root {
   /* Ink — deep warm charcoals for text */
   --ink: #1a1612;
@@ -35,11 +39,12 @@
   --rule-strong: rgba(26, 22, 18, 0.20);
   --rule-bronze: rgba(138, 107, 65, 0.32);
 
-  /* Typography — Editorial serif (display) + grotesk (body) — Permasteelisa / Foster + Partners stack */
-  --font-display: "Fraunces", "Noto Serif SC", "Songti SC", "Source Han Serif SC", Georgia, serif;
-  --font-sans: "Inter", "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Heiti SC", "Microsoft YaHei", Arial, sans-serif;
+  /* Typography — Editorial serif (display) + grotesk (body) — Permasteelisa / Foster + Partners stack
+     Chinese script: LXGW WenKai TC / SC (霞鶩文楷 · 正楷 / 楷書) used for ALL Chinese text */
+  --font-display: "Fraunces", "LXGW WenKai TC", "LXGW WenKai", "Noto Serif TC", "Songti TC", Georgia, serif;
+  --font-sans: "Inter", "LXGW WenKai TC", "LXGW WenKai", "PingFang TC", "PingFang SC", "Hiragino Sans GB", Arial, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
-  --font-chinese-display: "Noto Serif TC", "Songti TC", "Source Han Serif TC", "PingFang TC", "Noto Serif SC", "Songti SC", serif;
+  --font-chinese-display: "LXGW WenKai TC", "LXGW WenKai", "Noto Serif TC", "Songti TC", "PingFang TC", serif;
 
   /* Layout */
   --gutter: clamp(22px, 4.4vw, 64px);
@@ -2481,9 +2486,13 @@ section {
 /* ═════════════════════════════════════════════════════════════
    Cross-language subtitle suppression
    Each language renders cleanly — never mix EN and 繁 in same heading.
-   The .zh / .h3-zh subtitles were a pre-i18n bilingual pattern;
-   now hidden so titles match the active language via i18n only.
-   Lang-switch button keeps its own [lang="ar"] etc. for keyboard layout.
+   The .zh / .h3-zh subtitles were a pre-i18n bilingual pattern.
+
+   Default (EN): hide all .zh / .h3-zh subtitles.
+   In 繁/简 mode (body.lang-zh-hant / lang-zh-hans / lang-zh):
+     - Show the .zh subtitle
+     - Hide the surrounding EN text in archive arc-name (using ::first-child or
+       wrapping the EN text in .arc-name-en)
    ═════════════════════════════════════════════════════════════ */
 .product-title .zh,
 .adv-head h3 .zh,
@@ -2491,6 +2500,29 @@ section {
 .work-info h3 .h3-zh,
 .archive-row .arc-name .zh {
   display: none;
+}
+
+/* 繁/简 mode: archive project name shows .zh, hides EN sibling text */
+body.lang-zh-hant .archive-row .arc-name .zh,
+body.lang-zh-hans .archive-row .arc-name .zh,
+body.lang-zh .archive-row .arc-name .zh {
+  display: inline;
+  font-family: "LXGW WenKai TC", "LXGW WenKai", "Noto Serif TC", serif;
+  color: var(--ink);
+}
+
+/* Hide the EN portion of arc-name h4 in zh mode.
+   Pattern: <h4 class="arc-name">English Name <span class="zh">繁體名</span></h4>
+   We use font-size:0 on h4 then restore font-size on .zh (a common a11y-safe trick). */
+body.lang-zh-hant .archive-row .arc-name,
+body.lang-zh-hans .archive-row .arc-name,
+body.lang-zh .archive-row .arc-name {
+  font-size: 0;
+}
+body.lang-zh-hant .archive-row .arc-name .zh,
+body.lang-zh-hans .archive-row .arc-name .zh,
+body.lang-zh .archive-row .arc-name .zh {
+  font-size: 17px;
 }
 
 /* Work-img wrapper anchor — hover signals clickability */
@@ -3569,3 +3601,94 @@ body.lang-zh-hant .archive-row .arc-cell .zh-meta {
    (zh-hant / zh-hans display both; EN only needs the main line).
    ═════════════════════════════════════════════════════════════ */
 body.lang-en .group-motto > span { display: none; }
+
+/* ═════════════════════════════════════════════════════════════
+   正楷 (LXGW WenKai TC) 全站中文专用 — 当 body.lang-zh-hant / lang-zh-hans
+   激活时，所有文本（除等宽和按钮 mono 风格）都用霞鹜文楷。
+   英文模式保留 Fraunces / Inter (即原设计)。
+   ═════════════════════════════════════════════════════════════ */
+body.lang-zh-hant,
+body.lang-zh-hans,
+body.lang-zh,
+body.lang-zh-hant *:not(.font-mono):not([class*="mono"]):not(code):not(pre),
+body.lang-zh-hans *:not(.font-mono):not([class*="mono"]):not(code):not(pre),
+body.lang-zh *:not(.font-mono):not([class*="mono"]):not(code):not(pre) {
+  font-family: "LXGW WenKai TC", "LXGW WenKai", "Noto Serif TC", "Songti TC", "PingFang TC", serif !important;
+}
+
+/* keep numeric / mono labels in their original mono font even in 繁/简 mode */
+body.lang-zh-hant .section-num,
+body.lang-zh-hant .kicker,
+body.lang-zh-hant .brand-meta,
+body.lang-zh-hant .hero-eyebrow,
+body.lang-zh-hant .num,
+body.lang-zh-hant .work-img-tag,
+body.lang-zh-hant .group-tag,
+body.lang-zh-hant .arc-year,
+body.lang-zh-hant .footer-bottom,
+body.lang-zh-hans .section-num,
+body.lang-zh-hans .kicker,
+body.lang-zh-hans .brand-meta,
+body.lang-zh-hans .hero-eyebrow,
+body.lang-zh-hans .num,
+body.lang-zh-hans .work-img-tag,
+body.lang-zh-hans .group-tag,
+body.lang-zh-hans .arc-year,
+body.lang-zh-hans .footer-bottom {
+  font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace !important;
+}
+
+/* ═════════════════════════════════════════════════════════════
+   Contact section · 4-entity address cards
+   ═════════════════════════════════════════════════════════════ */
+.contact-entities {
+  list-style: none;
+  padding: 0;
+  margin: clamp(28px, 4vh, 44px) 0 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(14px, 1.4vw, 22px);
+}
+
+.contact-entity {
+  padding: clamp(18px, 2.2vw, 28px);
+  background: var(--paper-2);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  transition: border-color 280ms var(--easing), transform 280ms var(--easing);
+}
+.contact-entity:hover {
+  border-color: var(--bronze);
+  transform: translateY(-2px);
+}
+
+.ce-tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--bronze);
+  margin-bottom: 12px;
+}
+
+.ce-name {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(15px, 1.3vw, 17px);
+  line-height: 1.35;
+  color: var(--ink);
+  margin: 0 0 8px;
+  letter-spacing: -0.005em;
+}
+
+.ce-addr {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-dim);
+}
+
+@media (max-width: 900px) {
+  .contact-entities { grid-template-columns: 1fr; }
+}

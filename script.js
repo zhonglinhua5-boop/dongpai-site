@@ -41,6 +41,10 @@
       metricArea: "Flagship plant, Huizhou",
       metricTeam: "Huizhou · Dongguan · 2× Hong Kong",
       metricFlats: "Flats delivered, HK · GBA",
+      metric1Unit: "yrs",
+      metric2Unit: "m²",
+      metric3Unit: "entities",
+      metric4Unit: "+",
 
       manifestoKicker: "№ 01 — Manifesto",
       manifestoBody:
@@ -158,6 +162,14 @@
         "If you're an architect, curtain-wall consultant or main contractor with a façade in scope, we'd like to see your drawings. We respond to enquiries within two business days — usually with a question, a clarification, and a rough capacity slot.",
       contactSingleKey: "One contact · four entities · two plants · two HK offices.",
       contactSingleNote: 'For the full group structure — Huizhou flagship, Dongguan workshop, Hong Kong sales &amp; engineering offices — see <a href="#studio">Group Structure ↗</a>',
+      contactEnt1Tag: "Flagship Plant · Huizhou",
+      contactEnt1Addr: "No. 1 Nantang East Road, Chenjiang Street,<br />Zhongkai High-tech Zone, Huizhou, Guangdong",
+      contactEnt2Tag: "Original Workshop · Dongguan",
+      contactEnt2Addr: "Room 102, Building 1, No. 20 Daxing Road,<br />Xiegang Town, Dongguan, Guangdong",
+      contactEnt3Tag: "HK Sales · Tsuen Wan",
+      contactEnt3Addr: "Room 11, 1/F, Block B, Hi-Tech Industrial Centre,<br />491–501 Castle Peak Road, Tsuen Wan, N.T., HK",
+      contactEnt4Tag: "HK Engineering · Kwun Tong",
+      contactEnt4Addr: "RM 9042, 9/F, Block B, Chung Mei Centre,<br />15–17 Hing Yip Street, Kwun Tong, Kowloon, HK",
       contactLabelHZ: "Flagship Plant · Huizhou",
       contactLabelDG: "Original Workshop · Dongguan",
       contactLabelHKsales: "HK Sales · Tsuen Wan",
@@ -278,6 +290,12 @@
       timeline2: "Changlei Hardware founded — production lines extended into the supply chain",
       timeline3: "Heguang Curtain Wall founded — entered curtain-wall & façade engineering",
       timeline4: "Dongpai Metal Products — 47,000 m² Huizhou flagship · one-stop hardware partner for large-scale HK projects",
+      work1Tag: "South Side · Phase 5",
+      work2Tag: "Kai Tak · 6551",
+      work3Tag: "North Point",
+      work4Tag: "Wan Chai",
+      work5Tag: "Wong Tai Sin",
+      work4Arch: "Wheelock (in-house)",
       work1H3: "Deep Water Pavilia",
       work2H3: "Cullinan Harbour",
       work3H3: "101 King's Road",
@@ -315,6 +333,10 @@
       metricArea: "惠州旗艦廠面積",
       metricTeam: "惠州 · 東莞 · 2× 香港",
       metricFlats: "已交付公寓數 · 港 / 大灣區",
+      metric1Unit: "年",
+      metric2Unit: "㎡",
+      metric3Unit: "法人",
+      metric4Unit: "+",
 
       manifestoKicker: "№ 01 — 我們的信念",
       manifestoBody:
@@ -368,7 +390,7 @@
       work3Scope: "鋁合金欄杆 · 空調格柵 · 管井包板",
       work3Qty: "251 戶",
       work4Copy:
-        "灣仔精品住宅專案，金屬構件貫穿底層平臺至頂層——<em>特色牆、柱身包板、天花、陽臺</em>由同一 Atelier 細化處理，讓整棟讀來如一體。",
+        "灣仔精品住宅專案，金屬構件貫穿底層平臺至頂層——<em>特色牆、柱身包板、天花、陽臺</em>由同一工坊細化處理，讓整棟讀來如一體。",
       work4Scope: "特色牆 · 柱身包板 · 天花 · 陽臺",
       work4Qty: "88 戶",
       work5Copy:
@@ -565,6 +587,14 @@
       /* ─── Contact single ─── */
       contactSingleKey: "一個對接人 · 四家法人 · 兩個工廠 · 兩個香港辦事處。",
       contactSingleNote: "完整集團架構——惠州旗艦廠、東莞協作工廠、香港銷售與工程辦公室——請見 <a href=\"#studio\">集團架構 ↗</a>",
+      contactEnt1Tag: "旗艦廠 · 惠州",
+      contactEnt1Addr: "廣東省惠州市仲愷高新區陳江街道<br />南塘東路 1 號",
+      contactEnt2Tag: "創始工廠 · 東莞",
+      contactEnt2Addr: "廣東省東莞市謝崗鎮大興路 20 號<br />1 棟 102 室",
+      contactEnt3Tag: "香港銷售 · 荃灣",
+      contactEnt3Addr: "香港新界荃灣青山公路 491-501 號<br />Hi-Tech Industrial Centre B 座 1 樓 11 室",
+      contactEnt4Tag: "香港工程 · 觀塘",
+      contactEnt4Addr: "香港九龍觀塘興業街 15-17 號<br />鍾美中心 B 座 9 樓 9042 室",
 
       /* ─── Footer (minimal) ─── */
       footerTagline:
@@ -580,6 +610,12 @@
       navAdvantages: "核心優勢",
       navCert: "品質認證",
       navNews: "公司動態",
+      work1Tag: "南區 · 第五期",
+      work2Tag: "啟德 · 6551",
+      work3Tag: "北角",
+      work4Tag: "灣仔",
+      work5Tag: "黃大仙",
+      work4Arch: "Wheelock（內部設計團隊）",
       work1H3: "滶晨 · 南區第五期",
       work2H3: "天璽·海 · 啟德 6551",
       work3H3: "英皇道 101 號 · 北角",
@@ -617,6 +653,10 @@
       metricArea: "惠州旗舰厂面积",
       metricTeam: "在职工匠团队",
       metricFlats: "已交付公寓数 · 港 / 大湾区",
+      metric1Unit: "年",
+      metric2Unit: "㎡",
+      metric3Unit: "法人",
+      metric4Unit: "+",
 
       manifestoKicker: "№ 01 — 我们的信念",
       manifestoBody:
@@ -657,6 +697,12 @@
       specArchitect: "建筑师",
       specScope: "范畴",
       specQty: "数量",
+      work1Tag: "南区 · 第五期",
+      work2Tag: "启德 · 6551",
+      work3Tag: "北角",
+      work4Tag: "湾仔",
+      work5Tag: "黄大仙",
+      work4Arch: "Wheelock（内部设计团队）",
       work1H3: "漶晨 · Deep Water Pavilia",
       work2H3: "天玺·海 · Cullinan Harbour",
       work3H3: "英皇道 101 号 · 101 King's Road",
@@ -675,7 +721,7 @@
       work3Scope: "铝合金栏杆 · 空调格栅 · 管井包板",
       work3Qty: "251 户",
       work4Copy:
-        "湾仔精品住宅项目，金属构件贯穿底层平台至顶层——<em>特色墙、柱身包板、天花、阳台</em>由同一 Atelier 细化处理，让整栋读来如一体。",
+        "湾仔精品住宅项目，金属构件贯穿底层平台至顶层——<em>特色墙、柱身包板、天花、阳台</em>由同一工坊细化处理，让整栋读来如一体。",
       work4Scope: "特色墙 · 柱身包板 · 天花 · 阳台",
       work4Qty: "88 户",
       work5Copy:
@@ -872,6 +918,14 @@
       /* ─── Contact single ─── */
       contactSingleKey: "一个对接人 · 四家法人 · 两个工厂 · 两个香港办事处。",
       contactSingleNote: "完整集团架构——惠州旗舰厂、东莞协作工厂、香港销售与工程办公室——请见 <a href=\"#studio\">集团架构 ↗</a>",
+      contactEnt1Tag: "旗舰厂 · 惠州",
+      contactEnt1Addr: "广东省惠州市仲恺高新区陈江街道<br />南塘东路 1 号",
+      contactEnt2Tag: "创始工厂 · 东莞",
+      contactEnt2Addr: "广东省东莞市谢岗镇大兴路 20 号<br />1 栋 102 室",
+      contactEnt3Tag: "香港销售 · 荃湾",
+      contactEnt3Addr: "香港新界荃湾青山公路 491-501 号<br />Hi-Tech Industrial Centre B 座 1 楼 11 室",
+      contactEnt4Tag: "香港工程 · 观塘",
+      contactEnt4Addr: "香港九龙观塘兴业街 15-17 号<br />钟美中心 B 座 9 楼 9042 室",
 
       /* ─── Footer (minimal) ─── */
       footerTagline:
