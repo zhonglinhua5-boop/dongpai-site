@@ -4136,3 +4136,29 @@ body.lang-zh .group-motto > span {
   filter: grayscale(0);
   transform: scale(1.03);
 }
+
+/* ═════════════════════════════════════════════════════════════
+   Empty image placeholders — user will upload real images.
+   Just clean paper-toned spaces, no text, no border, no dashed line.
+   ═════════════════════════════════════════════════════════════ */
+.img-placeholder {
+  width: 100%;
+  height: 100%;
+  background: var(--paper-3);
+  min-height: 220px;
+  aspect-ratio: 4 / 3;
+  display: block;
+}
+.product-img .img-placeholder { aspect-ratio: 4 / 5; }
+.work-img .img-placeholder { aspect-ratio: 16 / 10; min-height: 280px; }
+.equip-img .img-placeholder { aspect-ratio: 4 / 3; min-height: 180px; }
+
+/* Override prior aggressive max-height / object-fit:contain rules — they're
+   irrelevant now since there are no <img> elements in cap/work/equip. */
+.product-img,
+.work-img,
+.equip-img {
+  background: transparent !important;
+  padding: 0 !important;
+  aspect-ratio: unset !important;
+}
