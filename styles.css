@@ -3846,45 +3846,27 @@ body.lang-zh .group-motto > span {
       rgba(246, 241, 227, 0.10) 55%);
 }
 
-/* ── CAPABILITIES: 1 hero card + 2x2 sub-grid ────────────────── */
+/* ── CAPABILITIES: 5 equal cards, one single photo per module ── */
 .products-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: clamp(16px, 2vw, 28px);
+  gap: clamp(20px, 2.4vw, 36px);
   margin-top: clamp(32px, 4vh, 56px);
 }
-@media (min-width: 900px) {
-  .products-grid {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.85fr);
-    align-items: stretch;
-  }
+@media (min-width: 700px) {
+  .products-grid { grid-template-columns: repeat(2, 1fr); }
 }
-@media (min-width: 1280px) {
-  /* override earlier 5-col rule from previous pass */
-  .products-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1.85fr) !important; }
+@media (min-width: 1100px) {
+  .products-grid { grid-template-columns: repeat(5, 1fr) !important; }
 }
-.product-card--hero {
-  display: grid;
-  grid-template-rows: 1fr auto;
-  position: relative;
-}
-.product-card--hero .product-img {
-  aspect-ratio: unset;
-  height: 100%;
-  min-height: 420px;
-}
-.products-sub-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: clamp(12px, 1.5vw, 20px);
-}
+/* (removed compound layout — single img per module) */
+/* (removed compound layout — single img per module) */
+/* (removed compound layout — single img per module) */
 .product-img {
   position: relative;
   overflow: hidden;
   background: transparent;
-  aspect-ratio: unset !important;
-  min-height: 180px;
+  aspect-ratio: 4 / 5;
   border-radius: 0;
 }
 .product-img img {
@@ -3900,45 +3882,30 @@ body.lang-zh .group-motto > span {
   transform: scale(1.04);
   filter: grayscale(0) contrast(1.06);
 }
-.products-sub-grid .product-img {
-  height: 200px;
-  min-height: unset;
-}
+/* removed */
 @media (min-width: 1200px) {
-  .products-sub-grid .product-img { height: 240px; }
+  /* removed */
 }
-.products-sub-grid .product-info {
-  padding: 12px 0 14px;
-}
-.products-sub-grid .product-title {
-  font-size: clamp(18px, 1.6vw, 22px);
-}
-.products-sub-grid .product-desc {
-  display: none;
-}
+/* removed */
+/* removed */
+/* removed */
 @media (min-width: 1400px) {
-  .products-sub-grid .product-desc { display: block; font-size: 13px; }
+  /* removed */
 }
 @media (max-width: 899px) {
-  .products-sub-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; }
-  .products-sub-grid .product-img { height: 160px; }
+  /* removed */
+  /* removed */
 }
 @media (max-width: 600px) {
-  .products-sub-grid { grid-template-columns: 1fr; }
-  .product-card--hero .product-img { min-height: 320px; }
+  /* removed */
+  /* removed */
 }
 
 /* ── SELECTED WORK: portrait variant for 002/004 ───────────────── */
-.work-spread--portrait .work-img {
-  aspect-ratio: 3 / 4;
-}
+/* removed portrait variant */
 @media (min-width: 900px) {
-  .work-spread--portrait.flip {
-    grid-template-columns: 4fr 6fr;
-  }
-  .work-spread:not(.work-spread--portrait):not(.flip) {
-    grid-template-columns: 8fr 4fr;
-  }
+  /* removed portrait variant */
+  .work-spread:not(/* removed portrait variant */
 }
 .work-img img {
   filter: grayscale(0.12) contrast(1.05);
@@ -3955,23 +3922,15 @@ body.lang-zh .group-motto > span {
   grid-template-columns: 1fr;
   gap: clamp(20px, 2.5vw, 36px);
 }
-@media (min-width: 900px) {
-  .studio-grid {
-    grid-template-columns: 1.6fr 1fr 1.6fr;
-    align-items: start;
-  }
+@media (min-width: 700px) {
+  .studio-grid { grid-template-columns: repeat(2, 1fr); }
 }
-.equip-minor-group {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(16px, 2vw, 28px);
+@media (min-width: 1100px) {
+  .studio-grid { grid-template-columns: repeat(4, 1fr); }
 }
-.equip--large .equip-img {
-  aspect-ratio: 16 / 9;
-}
-.equip:not(.equip--large) .equip-img {
-  aspect-ratio: 4 / 3;
-}
+/* removed */
+/* removed */
+.equip:not(/* removed */
 .equip-img {
   overflow: hidden;
   background: transparent;
@@ -3989,8 +3948,8 @@ body.lang-zh .group-motto > span {
   filter: brightness(1) contrast(1.04);
 }
 @media (max-width: 899px) {
-  .equip-minor-group { flex-direction: row; }
-  .equip-minor-group .equip { flex: 1; }
+  /* removed */
+  /* removed */
 }
 
 /* ── CONTACT BANNER: full-width closing facade shot ─────────── */
@@ -4031,31 +3990,11 @@ body.lang-zh .group-motto > span {
    Selected Work · 2×2 mosaic of 4 real photos per project
    (replaces the single big collage img that read as "拼图")
    ═════════════════════════════════════════════════════════════ */
-.work-img-mosaic {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 3px;
-  width: 100%;
-  height: 100%;
-  background: transparent;
-}
-.work-img-mosaic img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  margin: 0;
-  filter: grayscale(0.12) contrast(1.04);
-  transition: filter 600ms var(--easing);
-}
-.work-spread:hover .work-img-mosaic img {
-  filter: grayscale(0) contrast(1.06);
-}
+/* removed mosaic */
+/* removed mosaic */
+.work-spread:hover /* removed mosaic */
 /* Override scale-on-hover from .work-img img (would zoom 4 imgs separately, looks janky) */
-.work-img-mosaic img { transform: none !important; }
+/* removed mosaic */
 
 /* Mosaic container takes the parent aspect-ratio set on .work-img */
-.work-img:has(.work-img-mosaic) {
-  padding: 0;
-}
+.work-img:has(/* removed mosaic */

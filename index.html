@@ -44,7 +44,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="styles.css?v=49" />
+    <link rel="stylesheet" href="styles.css?v=50" />
 
     <!-- Schema.org BreadcrumbList for SEO -->
     <script type="application/ld+json">
@@ -268,15 +268,12 @@
             </p>
           </div>
 
-          <!--
-            Editorial layout (visual-designer rev): 1 tall hero card on the left
-            + 2×2 sub-grid on the right. Breaks the equal-width "product grid"
-            feeling that made the section read as e-commerce.
-          -->
+          <!-- Capabilities: 5 equal cards, each ONE single photo per module
+               (per user feedback: "一个模块里只放一张图, 不是放很多") -->
           <div class="products-grid">
-            <article class="product-card product-card--hero" data-reveal data-stagger>
+            <article class="product-card" data-reveal data-stagger>
               <figure class="product-img">
-                <img loading="lazy" decoding="async" src="assets/site/cropped/cullinan-harbour-tower-grey.webp" alt="Aluminium cladding — Cullinan Harbour podium, bronze-anodised tower" width="530" height="890" />
+                <img loading="lazy" decoding="async" src="assets/site/enhanced/cullinan-harbour-tower-grey.webp" alt="Aluminium cladding — Cullinan Harbour bronze-anodised tower" width="530" height="890" />
                 <span class="product-num">01</span>
               </figure>
               <div class="product-info">
@@ -290,101 +287,84 @@
                 <p class="product-desc" data-i18n="cap1Desc">
                   Curtain-wall panels, podium feature panels, ventilated façades. Anodised, PVDF-coated and powder-coated finishes — engineered to BD wind-load and curtain-wall codes.
                 </p>
-                <a class="product-cta" href="#work">
-                  <span data-i18n="productCta">View Projects</span><span class="arrow">→</span>
-                </a>
               </div>
             </article>
 
-            <div class="products-sub-grid">
-              <article class="product-card" data-reveal data-stagger>
-                <figure class="product-img">
-                  <img loading="lazy" decoding="async" src="assets/site/cropped/spring-garden-fins.webp" alt="Balustrade & handrail — 38 Spring Garden Lane balcony fins close-up" width="576" height="450" />
-                  <span class="product-num">02</span>
-                </figure>
-                <div class="product-info">
-                  <h3 class="product-title" data-i18n-html="cap2Title">
-                    Balustrade &amp; Handrail
-                    <span class="zh">欄杆與扶手</span>
-                  </h3>
-                  <p class="product-meta" data-i18n-html="cap2Meta">
-                    Glass-clamped · Perforated · Vertical Fin
-                  </p>
-                  <p class="product-desc" data-i18n="cap2Desc">
-                    Balcony, podium and lift-lobby balustrades. Designed to BS EN 1991 wind loads, finished in the same anodised tone as the surrounding cladding.
-                  </p>
-                  <a class="product-cta" href="#work">
-                    <span data-i18n="productCta">View Projects</span><span class="arrow">→</span>
-                  </a>
-                </div>
-              </article>
+            <article class="product-card" data-reveal data-stagger>
+              <figure class="product-img">
+                <img loading="lazy" decoding="async" src="assets/site/enhanced/spring-garden-fins-closeup.webp" alt="Balustrade & handrail — vertical bronze balcony fins close-up" width="576" height="410" />
+                <span class="product-num">02</span>
+              </figure>
+              <div class="product-info">
+                <h3 class="product-title" data-i18n-html="cap2Title">
+                  Balustrade &amp; Handrail
+                  <span class="zh">欄杆與扶手</span>
+                </h3>
+                <p class="product-meta" data-i18n-html="cap2Meta">
+                  Glass-clamped · Perforated · Vertical Fin
+                </p>
+                <p class="product-desc" data-i18n="cap2Desc">
+                  Balcony, podium and lift-lobby balustrades. Designed to BS EN 1991 wind loads, finished in the same anodised tone as the surrounding cladding.
+                </p>
+              </div>
+            </article>
 
-              <article class="product-card" data-reveal data-stagger>
-                <figure class="product-img">
-                  <img loading="lazy" decoding="async" src="assets/site/cropped/tkotl93-grill-main.webp" alt="AC grill feature wall — TKOTL 93, Tseung Kwan O" width="554" height="414" />
-                  <span class="product-num">03</span>
-                </figure>
-                <div class="product-info">
-                  <h3 class="product-title" data-i18n-html="cap3Title">
-                    AC Grill &amp; Louvre
-                    <span class="zh">空調格柵與百葉</span>
-                  </h3>
-                  <p class="product-meta" data-i18n-html="cap3Meta">
-                    BD Air-Discharge Code · Matched Finish
-                  </p>
-                  <p class="product-desc" data-i18n="cap3Desc">
-                    Fabricated to BD's Air Discharge Code, matched to the cladding finish so the building reads as one continuous skin — no visible service interruption.
-                  </p>
-                  <a class="product-cta" href="#work">
-                    <span data-i18n="productCta">View Projects</span><span class="arrow">→</span>
-                  </a>
-                </div>
-              </article>
+            <article class="product-card" data-reveal data-stagger>
+              <figure class="product-img">
+                <img loading="lazy" decoding="async" src="assets/site/enhanced/tkotl93-grill-main.webp" alt="AC grill feature wall — TKOTL 93, Tseung Kwan O" width="554" height="414" />
+                <span class="product-num">03</span>
+              </figure>
+              <div class="product-info">
+                <h3 class="product-title" data-i18n-html="cap3Title">
+                  AC Grill &amp; Louvre
+                  <span class="zh">空調格柵與百葉</span>
+                </h3>
+                <p class="product-meta" data-i18n-html="cap3Meta">
+                  BD Air-Discharge Code · Matched Finish
+                </p>
+                <p class="product-desc" data-i18n="cap3Desc">
+                  Fabricated to BD's Air Discharge Code, matched to the cladding finish so the building reads as one continuous skin — no visible service interruption.
+                </p>
+              </div>
+            </article>
 
-              <article class="product-card" data-reveal data-stagger>
-                <figure class="product-img">
-                  <img loading="lazy" decoding="async" src="assets/site/cropped/cullinan-ceiling-rhombus.webp" alt="Feature ceiling — Cullinan Harbour podium, rhombic suspended metal" width="572" height="450" />
-                  <span class="product-num">04</span>
-                </figure>
-                <div class="product-info">
-                  <h3 class="product-title" data-i18n-html="cap4Title">
-                    Feature Wall &amp; Ceiling
-                    <span class="zh">特色裝飾牆與吊頂</span>
-                  </h3>
-                  <p class="product-meta" data-i18n-html="cap4Meta">
-                    Rhombic · Fluted · Sculptural
-                  </p>
-                  <p class="product-desc" data-i18n="cap4Desc">
-                    Stainless steel, bronze and copper-anodised aluminium for lobbies, lift halls and clubhouses. For interiors that need to read as art, not as cladding.
-                  </p>
-                  <a class="product-cta" href="#work">
-                    <span data-i18n="productCta">View Projects</span><span class="arrow">→</span>
-                  </a>
-                </div>
-              </article>
+            <article class="product-card" data-reveal data-stagger>
+              <figure class="product-img">
+                <img loading="lazy" decoding="async" src="assets/site/enhanced/cullinan-ceiling-rhombus.webp" alt="Feature ceiling — Cullinan Harbour rhombic suspended metal" width="572" height="450" />
+                <span class="product-num">04</span>
+              </figure>
+              <div class="product-info">
+                <h3 class="product-title" data-i18n-html="cap4Title">
+                  Feature Wall &amp; Ceiling
+                  <span class="zh">特色裝飾牆與吊頂</span>
+                </h3>
+                <p class="product-meta" data-i18n-html="cap4Meta">
+                  Rhombic · Fluted · Sculptural
+                </p>
+                <p class="product-desc" data-i18n="cap4Desc">
+                  Stainless steel, bronze and copper-anodised aluminium for lobbies, lift halls and clubhouses. For interiors that need to read as art, not as cladding.
+                </p>
+              </div>
+            </article>
 
-              <article class="product-card" data-reveal data-stagger>
-                <figure class="product-img">
-                  <img loading="lazy" decoding="async" src="assets/site/cropped/queens-rd-ss-1.webp" alt="Stainless steel decoration — 158-164 Queen's Road Central feature wall" width="362" height="476" />
-                  <span class="product-num">05</span>
-                </figure>
-                <div class="product-info">
-                  <h3 class="product-title" data-i18n-html="cap5Title">
-                    Stainless Steel Decoration
-                    <span class="zh">不鏽鋼裝飾</span>
-                  </h3>
-                  <p class="product-meta" data-i18n-html="cap5Meta">
-                    Hairline · Mirror · Vibrated
-                  </p>
-                  <p class="product-desc" data-i18n="cap5Desc">
-                    Custom column cladding, signage and decorative screens. Hand-finished by craftsmen who have spent ten years polishing nothing else.
-                  </p>
-                  <a class="product-cta" href="#work">
-                    <span data-i18n="productCta">View Projects</span><span class="arrow">→</span>
-                  </a>
-                </div>
-              </article>
-            </div>
+            <article class="product-card" data-reveal data-stagger>
+              <figure class="product-img">
+                <img loading="lazy" decoding="async" src="assets/site/enhanced/queens-rd-ss-1.webp" alt="Stainless steel decoration — 158-164 Queen's Road Central feature wall" width="362" height="476" />
+                <span class="product-num">05</span>
+              </figure>
+              <div class="product-info">
+                <h3 class="product-title" data-i18n-html="cap5Title">
+                  Stainless Steel Decoration
+                  <span class="zh">不鏽鋼裝飾</span>
+                </h3>
+                <p class="product-meta" data-i18n-html="cap5Meta">
+                  Hairline · Mirror · Vibrated
+                </p>
+                <p class="product-desc" data-i18n="cap5Desc">
+                  Custom column cladding, signage and decorative screens. Hand-finished by craftsmen who have spent ten years polishing nothing else.
+                </p>
+              </div>
+            </article>
           </div>
         </div>
       </section>
@@ -488,13 +468,7 @@
           <article class="work-spread" data-reveal>
             <a class="work-img-link" href="work/deep-water-pavilia.html" aria-label="View deep-water-pavilia project page"><figure class="work-img">
               <span class="work-img-tag" data-i18n="work1Tag">South Side · Phase 5</span>
-              
-              <div class="work-img-mosaic">
-                <img loading="lazy" decoding="async" src="assets/site/cropped/deep-water-pavilia-tower.webp" alt="Deep Water Pavilia tower above Wong Chuk Hang MTR" />
-                <img loading="lazy" decoding="async" src="assets/site/cropped/deep-water-pavilia-balcony.webp" alt="Deep Water Pavilia curved balcony with bronze handrail" />
-                <img loading="lazy" decoding="async" src="assets/site/cropped/deep-water-pavilia-detail.webp" alt="Deep Water Pavilia AC grill and pipe-duct cladding" />
-                <img loading="lazy" decoding="async" src="assets/site/cropped/spring-garden-balcony.webp" alt="Bronze balcony detail — Dongpai craft signature" />
-              </div>
+              <img loading="lazy" decoding="async" src="assets/site/enhanced/deep-water-pavilia-tower.webp" alt="Deep Water Pavilia tower above Wong Chuk Hang MTR podium — bronze balcony, AC grill, pipe-duct cladding" width="580" height="880" />
             </figure></a>
             <div class="work-info">
               <span class="num">№.001 — 2023 / 2025</span>
@@ -517,13 +491,7 @@
           <article class="work-spread flip work-spread--portrait" data-reveal>
             <a class="work-img-link" href="work/cullinan-harbour.html" aria-label="View cullinan-harbour project page"><figure class="work-img">
               <span class="work-img-tag" data-i18n="work2Tag">Kai Tak · 6551</span>
-              
-              <div class="work-img-mosaic">
-                <img loading="lazy" decoding="async" src="assets/site/cropped/cullinan-harbour-tower-grey.webp" alt="Cullinan Harbour tower at Kai Tak" />
-                <img loading="lazy" decoding="async" src="assets/site/cropped/cullinan-harbour-render.webp" alt="Cullinan Harbour podium render with cladding" />
-                <img loading="lazy" decoding="async" src="assets/site/cropped/cullinan-harbour-cladding-top.webp" alt="Bronze podium cladding panel detail" />
-                <img loading="lazy" decoding="async" src="assets/site/cropped/cullinan-harbour-cladding-bot.webp" alt="Cladding installation at street level" />
-              </div>
+              <img loading="lazy" decoding="async" src="assets/site/enhanced/cullinan-harbour-tower-grey.webp" alt="Cullinan Harbour Kai Tak 6551 — bronze-anodised tower at podium level" width="530" height="890" />
             </figure></a>
             <div class="work-info">
               <span class="num">№.002 — 2024</span>
@@ -546,13 +514,7 @@
           <article class="work-spread" data-reveal>
             <a class="work-img-link" href="work/101-kings-road.html" aria-label="View 101-kings-road project page"><figure class="work-img">
               <span class="work-img-tag" data-i18n="work3Tag">North Point</span>
-              
-              <div class="work-img-mosaic">
-                <img loading="lazy" decoding="async" src="assets/site/cropped/spring-garden-fins.webp" alt="Vertical bronze balcony fins" />
-                <img loading="lazy" decoding="async" src="assets/site/cropped/spring-garden-fins-closeup.webp" alt="Bronze fin profile close-up" />
-                <img loading="lazy" decoding="async" src="assets/site/cropped/product-bronze-fins.webp" alt="Bronze fin extrusion — production reference" />
-                <img loading="lazy" decoding="async" src="assets/site/cropped/product-gold-fins.webp" alt="Gold-anodised fin variant in atelier" />
-              </div>
+              <img loading="lazy" decoding="async" src="assets/site/enhanced/spring-garden-fins-closeup.webp" alt="101 King's Road — vertical bronze balcony fins close-up" width="576" height="410" />
             </figure></a>
             <div class="work-info">
               <span class="num">№.003 — 2024</span>
@@ -575,13 +537,7 @@
           <article class="work-spread flip work-spread--portrait" data-reveal>
             <a class="work-img-link" href="work/spring-garden-lane.html" aria-label="View spring-garden-lane project page"><figure class="work-img">
               <span class="work-img-tag" data-i18n="work4Tag">Wan Chai</span>
-              
-              <div class="work-img-mosaic">
-                <img loading="lazy" decoding="async" src="assets/site/cropped/spring-garden-tower.webp" alt="38 Spring Garden Lane tower in Wan Chai" />
-                <img loading="lazy" decoding="async" src="assets/site/cropped/spring-garden-fins.webp" alt="Spring Garden Lane balcony fins" />
-                <img loading="lazy" decoding="async" src="assets/site/cropped/spring-garden-balcony.webp" alt="Spring Garden Lane balcony close-up" />
-                <img loading="lazy" decoding="async" src="assets/site/cropped/spring-garden-grill-bot.webp" alt="Podium feature wall and AC grill" />
-              </div>
+              <img loading="lazy" decoding="async" src="assets/site/enhanced/spring-garden-tower.webp" alt="38 Spring Garden Lane Wan Chai — feature wall, column cladding, ceiling and balcony" width="552" height="890" />
             </figure></a>
             <div class="work-info">
               <span class="num">№.004 — 2023</span>
@@ -604,13 +560,7 @@
           <article class="work-spread" data-reveal>
             <a class="work-img-link" href="work/phoenext.html" aria-label="View phoenext project page"><figure class="work-img">
               <span class="work-img-tag" data-i18n="work5Tag">Wong Tai Sin</span>
-              
-              <div class="work-img-mosaic">
-                <img loading="lazy" decoding="async" src="assets/site/cropped/dpark-cladding.webp" alt="External cladding — comparable Dongpai project" />
-                <img loading="lazy" decoding="async" src="assets/site/cropped/dpark-baffle-ceiling.webp" alt="Baffle ceiling system" />
-                <img loading="lazy" decoding="async" src="assets/site/cropped/product-bronze-fins.webp" alt="Bronze fin extrusion in atelier" />
-                <img loading="lazy" decoding="async" src="assets/site/cropped/product-rail-close.webp" alt="Bronze railing close-up — craft detail" />
-              </div>
+              <img loading="lazy" decoding="async" src="assets/site/enhanced/dpark-cladding.webp" alt="Phoenext Wong Tai Sin — bronze external cladding (similar Dongpai work)" width="552" height="476" />
             </figure></a>
             <div class="work-info">
               <span class="num">№.005 — 2023</span>
@@ -931,8 +881,9 @@
             weld — most visually powerful machines) flanking a vertical pair of
             2 small. Asymmetric, kills the "4 brochure thumbnails in a row" feel.
           -->
+          <!-- Equipment: 4 equal cards, each ONE single photo per module -->
           <div class="studio-grid">
-            <article class="equip equip--large" data-reveal data-stagger>
+            <article class="equip" data-reveal data-stagger>
               <div class="equip-img"><img loading="lazy" decoding="async" src="assets/site/equip-laser.webp" alt="Laser cutting cell — 80mm plate, 2000×6000mm bed" width="2000" height="1125" /></div>
               <span class="equip-num">№.01 / Cutting</span>
               <h4 data-i18n="equip1Name">Laser Cutting Cell</h4>
@@ -942,29 +893,27 @@
               </dl>
             </article>
 
-            <div class="equip-minor-group">
-              <article class="equip" data-reveal data-stagger>
-                <div class="equip-img"><img loading="lazy" decoding="async" src="assets/site/cropped/equip-laser-tube.webp" alt="Laser tube cutting — Ø550mm, 12,000mm length" width="480" height="360" /></div>
-                <span class="equip-num">№.02 / Tube</span>
-                <h4 data-i18n="equip2Name">Laser Tube Cutting</h4>
-                <dl>
-                  <dt>Tube</dt><dd>⌀ up to 550 mm</dd>
-                  <dt>Length</dt><dd>up to 12,000 mm</dd>
-                </dl>
-              </article>
+            <article class="equip" data-reveal data-stagger>
+              <div class="equip-img"><img loading="lazy" decoding="async" src="assets/site/enhanced/equip-laser-tube.webp" alt="Laser tube cutting — Ø550mm, 12,000mm length" width="480" height="360" /></div>
+              <span class="equip-num">№.02 / Tube</span>
+              <h4 data-i18n="equip2Name">Laser Tube Cutting</h4>
+              <dl>
+                <dt>Tube</dt><dd>⌀ up to 550 mm</dd>
+                <dt>Length</dt><dd>up to 12,000 mm</dd>
+              </dl>
+            </article>
 
-              <article class="equip" data-reveal data-stagger>
-                <div class="equip-img"><img loading="lazy" decoding="async" src="assets/site/cropped/equip-500ton-bending.webp" alt="500-ton press brake — 25mm bend thickness, 3000mm length" width="462" height="358" /></div>
-                <span class="equip-num">№.03 / Brake</span>
-                <h4 data-i18n="equip3Name">500-Ton Press Brake</h4>
-                <dl>
-                  <dt>Thickness</dt><dd>up to 25 mm</dd>
-                  <dt>Length</dt><dd>3,000 mm</dd>
-                </dl>
-              </article>
-            </div>
+            <article class="equip" data-reveal data-stagger>
+              <div class="equip-img"><img loading="lazy" decoding="async" src="assets/site/enhanced/equip-500ton-bending.webp" alt="500-ton press brake — 25mm bend thickness, 3000mm length" width="462" height="358" /></div>
+              <span class="equip-num">№.03 / Brake</span>
+              <h4 data-i18n="equip3Name">500-Ton Press Brake</h4>
+              <dl>
+                <dt>Thickness</dt><dd>up to 25 mm</dd>
+                <dt>Length</dt><dd>3,000 mm</dd>
+              </dl>
+            </article>
 
-            <article class="equip equip--large" data-reveal data-stagger>
+            <article class="equip" data-reveal data-stagger>
               <div class="equip-img"><img loading="lazy" decoding="async" src="assets/site/equip-welder.webp" alt="Robotic welding cell — 6-axis articulated arm" width="2000" height="1334" /></div>
               <span class="equip-num">№.04 / Weld</span>
               <h4 data-i18n="equip4Name">Robotic Welding Cell</h4>
