@@ -4026,3 +4026,36 @@ body.lang-zh .group-motto > span {
 .contact-inner {
   padding: clamp(48px, 7vh, 80px) var(--gutter) clamp(60px, 8vh, 100px);
 }
+
+/* ═════════════════════════════════════════════════════════════
+   Selected Work · 2×2 mosaic of 4 real photos per project
+   (replaces the single big collage img that read as "拼图")
+   ═════════════════════════════════════════════════════════════ */
+.work-img-mosaic {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 3px;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+.work-img-mosaic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  margin: 0;
+  filter: grayscale(0.12) contrast(1.04);
+  transition: filter 600ms var(--easing);
+}
+.work-spread:hover .work-img-mosaic img {
+  filter: grayscale(0) contrast(1.06);
+}
+/* Override scale-on-hover from .work-img img (would zoom 4 imgs separately, looks janky) */
+.work-img-mosaic img { transform: none !important; }
+
+/* Mosaic container takes the parent aspect-ratio set on .work-img */
+.work-img:has(.work-img-mosaic) {
+  padding: 0;
+}
