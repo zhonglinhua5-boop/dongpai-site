@@ -3998,3 +3998,93 @@ body.lang-zh .group-motto > span {
 
 /* Mosaic container takes the parent aspect-ratio set on .work-img */
 .work-img:has(/* removed mosaic */
+
+/* ═════════════════════════════════════════════════════════════
+   Luxury small-image philosophy (Hermès / Bottega Veneta style)
+   不放大, 不 cover, 让原图按自己的尺寸小小呈现, 周围大留白
+   ═════════════════════════════════════════════════════════════ */
+
+/* Capabilities 5 cards — 图按原比例小图显示, 不撑容器 */
+.product-img {
+  aspect-ratio: unset !important;
+  background: transparent !important;
+  text-align: center;
+  padding: 24px 16px !important;
+  min-height: unset !important;
+  overflow: visible !important;
+}
+.product-img img {
+  position: static !important;
+  inset: unset !important;
+  width: auto !important;
+  height: auto !important;
+  max-width: 100% !important;
+  max-height: 280px !important;  /* 不放大, 小图精致 */
+  object-fit: contain !important;
+  margin: 0 auto;
+  display: block;
+}
+.product-num {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+}
+
+/* Selected Work 5 项 — 图小巧居左, 大量留白 */
+.work-img {
+  aspect-ratio: unset !important;
+  background: transparent !important;
+  overflow: visible !important;
+  padding: 16px 0 !important;
+}
+.work-img img {
+  width: auto !important;
+  height: auto !important;
+  max-width: 100%;
+  max-height: 480px;  /* 小一些, 不撑高 */
+  object-fit: contain !important;
+  display: block;
+}
+
+/* Studio Equipment 4 卡 — 同样小图 */
+.equip-img {
+  aspect-ratio: unset !important;
+  background: transparent !important;
+  overflow: visible !important;
+  padding: 12px !important;
+}
+.equip-img img {
+  width: auto !important;
+  height: auto !important;
+  max-width: 100%;
+  max-height: 220px !important;
+  object-fit: contain !important;
+  margin: 0 auto;
+  display: block;
+}
+
+/* logistic-map / certificate img 同样小图 */
+.logistic-map img,
+.cert-doc img {
+  max-width: 100%;
+  max-height: 380px;
+  object-fit: contain !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+/* Contact banner 也小一些, 不全宽撑天 */
+.contact-banner {
+  aspect-ratio: unset !important;
+  max-height: 320px !important;
+}
+.contact-banner img {
+  width: auto !important;
+  max-width: 100%;
+  max-height: 320px;
+  margin: 0 auto;
+  object-fit: contain !important;
+  filter: none !important;  /* 不再 desaturate, 让原图自然 */
+}
+
+/* Hero 也不要那么饱满 (但 hero 是 background-img 风格, 这里保留) */
