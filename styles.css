@@ -747,7 +747,7 @@ section {
    ───────────────────────────────────────────────────────── */
 
 .capabilities {
-  background: var(--paper-2);
+  background: transparent;
   border-top: 1px solid var(--rule);
 }
 
@@ -868,7 +868,7 @@ section {
 .work-img {
   position: relative;
   overflow: hidden;
-  background: var(--ink-2);
+  background: transparent;
   /* was 4/5 (tall portrait) — but source images are 2.46:1 wide, causing
      extreme top/bottom crop and 883px-tall figures. 16/10 matches better
      and keeps work-spread heights tight (~440px instead of ~880px). */
@@ -885,18 +885,12 @@ section {
 
 .work-spread:hover .work-img img { transform: scale(1.07); }
 
-.work-img::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, transparent 50%, rgba(26, 22, 18, 0.42) 100%);
-  pointer-events: none;
-}
+/* .work-img::after gradient removed — was covering bottom of project photos */
 
 .work-img-tag {
   position: absolute;
-  top: 24px;
-  left: 24px;
+  top: 18px;
+  left: 18px;
   z-index: 2;
   font-family: var(--font-mono);
   font-size: 10px;
@@ -987,7 +981,7 @@ section {
    ───────────────────────────────────────────────────────── */
 
 .archive {
-  background: var(--paper-2);
+  background: transparent;
   border-top: 1px solid var(--rule);
 }
 
@@ -1177,7 +1171,7 @@ section {
 .equip-img {
   aspect-ratio: 4 / 3;
   overflow: hidden;
-  background: var(--ink-2);
+  background: transparent;
   position: relative;
 }
 
@@ -1238,10 +1232,8 @@ section {
    ───────────────────────────────────────────────────────── */
 
 .process {
-  background: var(--paper-3);
+  background: transparent;
   border-top: 1px solid var(--rule);
-  background-image: radial-gradient(ellipse at top right, var(--bronze-glow) 0%, transparent 55%);
-  background-repeat: no-repeat;
 }
 
 .process-grid {
@@ -1260,8 +1252,7 @@ section {
 }
 
 .process-step {
-  padding: 48px 32px 56px;
-  border-right: 1px solid var(--rule);
+  padding: 36px 24px 44px;
   border-bottom: 1px solid var(--rule);
   position: relative;
   transition: background 400ms var(--easing);
@@ -1271,7 +1262,7 @@ section {
   .process-step:last-child { border-right: 0; }
 }
 
-.process-step:hover { background: rgba(176, 139, 90, 0.04); }
+.process-step:hover { background: transparent; }
 
 .process-step .step-n {
   font-family: var(--font-display);
@@ -1314,7 +1305,7 @@ section {
    ───────────────────────────────────────────────────────── */
 
 .clients {
-  background: var(--paper-2);
+  background: transparent;
   border-top: 1px solid var(--rule);
 }
 
@@ -1374,7 +1365,7 @@ section {
 
 .contact {
   border-top: 1px solid var(--rule);
-  background: linear-gradient(180deg, var(--paper-2) 0%, var(--paper-3) 100%);
+  background: transparent;
 }
 
 .contact-inner {
@@ -1469,21 +1460,12 @@ section {
 /* Form */
 .enquiry {
   display: grid;
-  gap: 24px;
-  padding: clamp(28px, 4vw, 56px);
-  background: rgba(26, 22, 18, 0.03);
-  border: 1px solid var(--rule);
+  gap: 20px;
+  padding: clamp(20px, 3vw, 32px) 0 0;
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--rule);
   position: relative;
-}
-
-.enquiry::before {
-  content: "";
-  position: absolute;
-  top: -1px;
-  left: 0;
-  width: 64px;
-  height: 1px;
-  background: var(--bronze);
 }
 
 .enquiry-head {
@@ -1564,7 +1546,7 @@ section {
 }
 
 .enquiry select option {
-  background: #ffffff;
+  background: var(--paper);
   color: var(--ink);
 }
 
@@ -1863,12 +1845,9 @@ section {
    LOGISTIC — Dongguan → HK map + side stats
    ═════════════════════════════════════════════════════════════ */
 .logistic {
-  padding: clamp(54px, 7vh, 100px) var(--gutter);
-  background:
-    radial-gradient(ellipse at 80% 0%, var(--bronze-glow) 0%, transparent 60%),
-    var(--paper-2);
+  padding: clamp(40px, 6vh, 80px) var(--gutter);
+  background: transparent;
   border-top: 1px solid var(--rule);
-  border-bottom: 1px solid var(--rule);
 }
 .logistic .section-inner { max-width: var(--max); margin: 0 auto; }
 
@@ -2097,9 +2076,9 @@ section {
    PRODUCTS — card grid (Guanyi-style B2B product showcase)
    ═════════════════════════════════════════════════════════════ */
 .products {
-  background: var(--paper-2);
+  background: transparent;
   border-top: 1px solid var(--rule);
-  padding: clamp(54px, 7vh, 100px) var(--gutter);
+  padding: clamp(40px, 6vh, 80px) var(--gutter);
 }
 .products .section-inner { max-width: var(--max); margin: 0 auto; }
 
@@ -2140,7 +2119,7 @@ section {
   position: relative;
   aspect-ratio: 16 / 10;
   overflow: hidden;
-  background: var(--paper-3);
+  background: transparent;
 }
 .product-img img {
   position: absolute;
@@ -2166,11 +2145,11 @@ section {
   background: rgba(26, 22, 18, 0.78);
   backdrop-filter: blur(8px);
   padding: 6px 11px;
-  border-radius: 2px;
+  border-radius: 0;
 }
 
 .product-info {
-  padding: 16px 2px 18px;
+  padding: 16px 0 18px;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -2307,11 +2286,12 @@ section {
 .news-item {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  padding: clamp(28px, 3vw, 40px);
-  background: #ffffff;
-  border: 1px solid var(--rule);
-  border-radius: 2px;
+  gap: 12px;
+  padding: clamp(20px, 2vw, 28px) 0;
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--rule);
+  border-radius: 0;
   transition:
     border-color 320ms var(--easing),
     transform 320ms var(--easing);
@@ -2385,12 +2365,13 @@ section {
   align-items: center;
   justify-content: center;
   gap: 2px;
-  background: #ffffff;
-  border: 1px solid var(--rule-strong);
+  background: rgba(26, 22, 18, 0.88);
+  border: 0;
   border-radius: 50%;
-  color: var(--ink);
+  color: var(--paper);
   cursor: pointer;
-  box-shadow: 0 8px 24px -8px rgba(40, 30, 20, 0.20);
+  box-shadow: none;
+  backdrop-filter: blur(8px);
   transition:
     transform 240ms var(--easing),
     background 240ms var(--easing),
@@ -2415,9 +2396,9 @@ section {
   display: none;
 }
 .rail-btn:hover {
-  background: var(--ink);
-  border-color: var(--ink);
-  color: var(--paper);
+  background: var(--bronze);
+  border-color: var(--bronze);
+  color: var(--ink);
   transform: scale(1.06);
 }
 .rail-btn:hover svg {
@@ -2431,11 +2412,11 @@ section {
   top: 50%;
   transform: translateY(-50%) translateX(8px);
   width: 168px;
-  background: #ffffff;
+  background: var(--paper);
   border: 1px solid var(--rule-strong);
-  border-radius: 4px;
-  padding: 16px;
-  box-shadow: 0 12px 36px -12px rgba(40, 30, 20, 0.24);
+  border-radius: 0;
+  padding: 14px;
+  box-shadow: none;
   opacity: 0;
   pointer-events: none;
   transition:
@@ -2455,7 +2436,7 @@ section {
   transform: translateY(-50%) rotate(45deg);
   width: 10px;
   height: 10px;
-  background: #ffffff;
+  background: var(--paper);
   border-right: 1px solid var(--rule-strong);
   border-top: 1px solid var(--rule-strong);
 }
@@ -2715,8 +2696,8 @@ html[lang*="zh"] .work-img-link::after {
 }
 
 .proj-gallery {
-  padding: 0 var(--gutter) clamp(48px, 8vh, 100px);
-  background: var(--paper-2);
+  padding: 0 var(--gutter) clamp(40px, 6vh, 72px);
+  background: transparent;
 }
 .proj-gallery .section-inner {
   max-width: var(--max);
@@ -2747,8 +2728,8 @@ html[lang*="zh"] .work-img-link::after {
 }
 
 .proj-cta {
-  padding: clamp(60px, 9vh, 110px) var(--gutter);
-  background: var(--paper-3);
+  padding: clamp(40px, 6vh, 72px) var(--gutter);
+  background: transparent;
   text-align: left;
 }
 .proj-cta .section-inner {
@@ -2772,7 +2753,7 @@ html[lang*="zh"] .work-img-link::after {
   transition: background 320ms var(--easing);
 }
 .proj-nav-link:hover {
-  background: var(--paper-2);
+  background: transparent;
 }
 .proj-nav-next { text-align: right; border-left: 1px solid var(--rule); }
 .proj-nav-label {
@@ -3399,9 +3380,9 @@ html[lang*="zh"] .section-lead {
    CORE ADVANTAGES — 6 cards from PDF P-05
    ═════════════════════════════════════════════════════════════ */
 .advantages {
-  background: var(--paper-2);
+  background: transparent;
   border-top: 1px solid var(--rule);
-  padding: clamp(54px, 7vh, 100px) var(--gutter);
+  padding: clamp(40px, 6vh, 80px) var(--gutter);
 }
 .advantages .section-inner { max-width: var(--max); margin: 0 auto; }
 
@@ -3901,9 +3882,10 @@ body.lang-zh .group-motto > span {
 .product-img {
   position: relative;
   overflow: hidden;
-  background: var(--paper-3);
+  background: transparent;
   aspect-ratio: unset !important;
   min-height: 180px;
+  border-radius: 0;
 }
 .product-img img {
   position: absolute;
@@ -3926,7 +3908,7 @@ body.lang-zh .group-motto > span {
   .products-sub-grid .product-img { height: 240px; }
 }
 .products-sub-grid .product-info {
-  padding: 12px 2px 14px;
+  padding: 12px 0 14px;
 }
 .products-sub-grid .product-title {
   font-size: clamp(18px, 1.6vw, 22px);
@@ -3992,7 +3974,7 @@ body.lang-zh .group-motto > span {
 }
 .equip-img {
   overflow: hidden;
-  background: var(--ink-2);
+  background: transparent;
   position: relative;
 }
 .equip-img img {
@@ -4037,8 +4019,8 @@ body.lang-zh .group-motto > span {
     180deg,
     transparent 0%,
     transparent 40%,
-    rgba(239, 233, 216, 0.70) 75%,
-    var(--paper-2) 100%
+    rgba(246, 241, 227, 0.70) 75%,
+    var(--paper) 100%
   );
 }
 .contact-inner {
