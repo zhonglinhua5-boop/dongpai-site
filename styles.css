@@ -4088,3 +4088,51 @@ body.lang-zh .group-motto > span {
 }
 
 /* Hero 也不要那么饱满 (但 hero 是 background-img 风格, 这里保留) */
+
+/* ═════════════════════════════════════════════════════════════
+   Material Inspiration — horizontal strip of CC0 mood photos
+   Small images, generous gaps, clearly labeled as references
+   ═════════════════════════════════════════════════════════════ */
+.inspiration {
+  padding: clamp(40px, 6vh, 80px) var(--gutter);
+  background: transparent;
+  border-top: 1px solid var(--rule);
+}
+.inspiration-head {
+  margin-bottom: clamp(24px, 3vh, 40px);
+  max-width: 60ch;
+}
+.inspiration-lead {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(20px, 1.8vw, 26px);
+  line-height: 1.35;
+  color: var(--text-dim);
+  font-style: italic;
+  margin-top: 8px;
+}
+.inspiration-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(10px, 1.2vw, 18px);
+}
+@media (min-width: 900px) {
+  .inspiration-strip { grid-template-columns: repeat(6, 1fr); }
+}
+.inspiration-strip figure {
+  margin: 0;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+.inspiration-strip img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(0.18);
+  transition: filter 600ms var(--easing), transform 800ms var(--easing);
+}
+.inspiration-strip figure:hover img {
+  filter: grayscale(0);
+  transform: scale(1.03);
+}
