@@ -1064,24 +1064,60 @@
     });
   });
 
-  /* ───────── Enquiry form
-     The form's HTML now POSTs natively to https://formsubmit.co/dongpaijinshu1@gmail.com
-     (form action). FormSubmit forwards each submission as an email to that
-     address and redirects the browser to /thanks.html on success.
-     No JS handler needed — native form behavior is more reliable across
-     mobile + WeChat in-app browsers.
-     We only inject a button label change on submit for instant UX feedback. */
+  /* ───────── Enquiry form (AJAX + 自跳 thanks.html)
+     用 fetch POST 到 FormSubmit AJAX endpoint, 获 JSON, 自主控制成功后跳转。
+     原因: FormSubmit 的 _next 参数对真浏览器经常不生效, 改用 AJAX 100% 可控.
+     失败 fallback: 让浏览器原生 form submit (至少能看到 FormSubmit 自带成功页). */
   const form = document.getElementById("enquiry-form");
   if (form) {
     const submitBtn = form.querySelector("button[type='submit']");
-    form.addEventListener("submit", () => {
-      if (!submitBtn) return;
+    const originalBtnText = submitBtn ? submitBtn.textContent : "";
+    const getLang = () => {
       const lang = document.documentElement.lang || "en";
-      const norm = lang.toLowerCase().startsWith("zh-hant") ? "zh-hant"
+      return lang.toLowerCase().startsWith("zh-hant") ? "zh-hant"
         : lang.toLowerCase().startsWith("zh") ? "zh-hans" : "en";
-      const sendingTxt = (dict[norm] && dict[norm].formSending) || "Sending…";
-      submitBtn.textContent = sendingTxt;
-      submitBtn.disabled = true;
+    };
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      if (submitBtn) {
+        const sendingTxt = (dict[getLang()] && dict[getLang()].formSending) || "Sending…";
+        submitBtn.textContent = sendingTxt;
+        submitBtn.disabled = true;
+      }
+      // 收集表单数据
+      const fd = new FormData(form);
+      const payload = {};
+      fd.forEach((v, k) => { payload[k] = v; });
+      // AJAX endpoint = /ajax/{email}, 返回 JSON
+      const email = (form.action || "").replace(/^.*\/formsubmit\.co\//, "");
+      const ajaxUrl = `https://formsubmit.co/ajax/${email}`;
+      try {
+        const resp = await fetch(ajaxUrl, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Accept": "application/json" },
+          body: JSON.stringify(payload),
+        });
+        const data = await resp.json().catch(() => ({}));
+        if (resp.ok && (data.success === "true" || data.success === true)) {
+          // 成功 — 跳 thanks.html
+          window.location.href = "/thanks.html";
+        } else {
+          // FormSubmit 报错或返回 false — 退回原生提交, 用户至少看到反馈
+          form.removeEventListener("submit", arguments.callee);
+          form.submit();
+        }
+      } catch (err) {
+        // 网络错误 — fallback 原生提交
+        if (submitBtn) {
+          submitBtn.textContent = originalBtnText;
+          submitBtn.disabled = false;
+        }
+        // 用户重试时会重新触发, 不强制跳转
+        console.warn("Enquiry AJAX failed, please retry:", err);
+        alert((getLang() === "en")
+          ? "Network error — please check connection and try again."
+          : "网络异常 — 请检查后重试");
+      }
     });
   }
 
