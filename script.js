@@ -1077,7 +1077,10 @@
       return lang.toLowerCase().startsWith("zh-hant") ? "zh-hant"
         : lang.toLowerCase().startsWith("zh") ? "zh-hans" : "en";
     };
+    // 标记位避免 form.submit() 重新触发自己
+    let nativeFallback = false;
     form.addEventListener("submit", async (e) => {
+      if (nativeFallback) return; // 已经是 fallback, 让浏览器原生走
       e.preventDefault();
       if (submitBtn) {
         const sendingTxt = (dict[getLang()] && dict[getLang()].formSending) || "Sending…";
@@ -1091,32 +1094,32 @@
       // AJAX endpoint = /ajax/{email}, 返回 JSON
       const email = (form.action || "").replace(/^.*\/formsubmit\.co\//, "");
       const ajaxUrl = `https://formsubmit.co/ajax/${email}`;
+      const goNative = () => {
+        // 任何 AJAX 失败 → 静默降级原生 form POST, 浏览器跳 FormSubmit 自带 success 页
+        nativeFallback = true;
+        if (submitBtn) submitBtn.disabled = false;
+        form.submit();
+      };
       try {
         const resp = await fetch(ajaxUrl, {
           method: "POST",
-          headers: { "Content-Type": "application/json", "Accept": "application/json" },
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "X-Requested-With": "XMLHttpRequest",
+          },
           body: JSON.stringify(payload),
         });
         const data = await resp.json().catch(() => ({}));
         if (resp.ok && (data.success === "true" || data.success === true)) {
-          // 成功 — 跳 thanks.html
           window.location.href = "/thanks.html";
         } else {
-          // FormSubmit 报错或返回 false — 退回原生提交, 用户至少看到反馈
-          form.removeEventListener("submit", arguments.callee);
-          form.submit();
+          goNative();
         }
       } catch (err) {
-        // 网络错误 — fallback 原生提交
-        if (submitBtn) {
-          submitBtn.textContent = originalBtnText;
-          submitBtn.disabled = false;
-        }
-        // 用户重试时会重新触发, 不强制跳转
-        console.warn("Enquiry AJAX failed, please retry:", err);
-        alert((getLang() === "en")
-          ? "Network error — please check connection and try again."
-          : "网络异常 — 请检查后重试");
+        // 网络错误 (VPN/代理拦截/CORS) — 也降级原生, 不弹 alert
+        console.warn("Enquiry AJAX failed, falling back to native form POST:", err);
+        goNative();
       }
     });
   }
