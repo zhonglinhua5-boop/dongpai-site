@@ -1065,7 +1065,7 @@
   });
 
   /* ───────── Enquiry form
-     The form's HTML now POSTs natively to https://formsubmit.co/940994770@qq.com
+     The form's HTML now POSTs natively to https://formsubmit.co/dongpaijinshu1@gmail.com
      (form action). FormSubmit forwards each submission as an email to that
      address and redirects the browser to /thanks.html on success.
      No JS handler needed — native form behavior is more reliable across
