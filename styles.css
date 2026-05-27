@@ -4162,3 +4162,157 @@ body.lang-zh .group-motto > span {
   padding: 0 !important;
   aspect-ratio: unset !important;
 }
+
+/* ═════════════════════════════════════════════════════════════
+   Cookie Consent Banner (GDPR + HK PDPO 合规)
+   - 固定底部, 米色背景, 古铜色 hairline
+   - 双语 EN / zh-Hant 通过 body.lang-* 切换
+   - mobile (max-width 720px) 改竖排, 全宽
+   ═════════════════════════════════════════════════════════════ */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: var(--paper-2, #efe8d4);
+  border-top: 1px solid var(--bronze);
+  box-shadow: 0 -4px 16px rgba(74, 54, 33, 0.08);
+  animation: cookie-banner-rise 0.35s ease-out;
+}
+
+@keyframes cookie-banner-rise {
+  from { transform: translateY(100%); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+.cookie-banner.is-hidden {
+  display: none;
+}
+
+.cookie-banner-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.cookie-banner-text {
+  flex: 1 1 auto;
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--text-dim);
+}
+
+.cookie-banner-text a {
+  color: var(--bronze);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.cookie-banner-text a:hover {
+  color: var(--bronze-1);
+}
+
+.cookie-banner-actions {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* 三个按钮: 复用站内 .btn / .btn-primary 风格语义,
+   但单独写以免依赖外部 .btn 的具体定义。
+   - decline = 边框米色按钮
+   - accept  = 实心古铜按钮
+*/
+.cookie-banner .cookie-btn-decline,
+.cookie-banner .cookie-btn-accept {
+  font-family: var(--font-display);
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  padding: 10px 22px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.cookie-banner .cookie-btn-decline {
+  background: transparent;
+  border: 1px solid var(--bronze);
+  color: var(--bronze-1);
+}
+
+.cookie-banner .cookie-btn-decline:hover {
+  background: var(--bronze-glow);
+  border-color: var(--bronze-1);
+}
+
+.cookie-banner .cookie-btn-accept {
+  background: var(--bronze);
+  border: 1px solid var(--bronze);
+  color: #fff;
+}
+
+.cookie-banner .cookie-btn-accept:hover {
+  background: var(--bronze-1);
+  border-color: var(--bronze-1);
+}
+
+/* 双语切换 — 默认全隐藏, 由 body.lang-* 控制显示 */
+.cookie-banner-en,
+.cookie-banner-zh {
+  display: none;
+}
+
+body.lang-en .cookie-banner-en {
+  display: inline;
+}
+
+body.lang-zh-hant .cookie-banner-zh {
+  display: inline;
+}
+
+/* button 内的语言 span 同样切换 */
+body.lang-en .cookie-banner .cookie-btn-decline .cookie-banner-en,
+body.lang-en .cookie-banner .cookie-btn-accept .cookie-banner-en {
+  display: inline;
+}
+
+body.lang-zh-hant .cookie-banner .cookie-btn-decline .cookie-banner-zh,
+body.lang-zh-hant .cookie-banner .cookie-btn-accept .cookie-banner-zh {
+  display: inline;
+}
+
+/* mobile: 竖排, 全宽按钮 */
+@media (max-width: 720px) {
+  .cookie-banner-inner {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 16px 18px;
+    gap: 14px;
+  }
+
+  .cookie-banner-text {
+    font-size: 14px;
+    text-align: left;
+  }
+
+  .cookie-banner-actions {
+    width: 100%;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .cookie-banner .cookie-btn-decline,
+  .cookie-banner .cookie-btn-accept {
+    flex: 1 1 50%;
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+}

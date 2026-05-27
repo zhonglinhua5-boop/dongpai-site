@@ -196,6 +196,7 @@
         "Architectural metalworks atelier since 2012. Bronze, aluminium and stainless steel for the developers and architects shaping Hong Kong's skyline.",
       footerNav: "Navigate",
       footerContact: "Contact",
+      footerPrivacy: "Privacy Policy",
       footerHK: "Tsuen Wan · Kwun Tong, Hong Kong",
       footerHZ: "Zhongkai High-tech Zone, Huizhou",
       footerDG: "Xiegang Town, Dongguan",
@@ -467,6 +468,7 @@
         "建築金屬工坊，自 2012 年。為塑造香港天際線的開發商與建築師，提供銅、鋁、不鏽鋼外立面構件。",
       footerNav: "導覽",
       footerContact: "聯絡",
+      footerPrivacy: "私隱政策",
       footerHK: "荃灣 · 觀塘 · 香港",
       footerHZ: "惠州市仲愷高新區",
       footerDG: "東莞市謝崗鎮",
@@ -799,6 +801,7 @@
         "建筑金属工坊，自 2012 年。为塑造香港天际线的开发商与建筑师，提供铜、铝、不锈钢外立面构件。",
       footerNav: "导览",
       footerContact: "联系",
+      footerPrivacy: "隐私政策",
       footerHK: "荃湾 · 观塘 · 香港",
       footerHZ: "惠州市仲恺高新区",
       footerDG: "东莞市谢岗镇",
@@ -1112,6 +1115,18 @@
         });
         const data = await resp.json().catch(() => ({}));
         if (resp.ok && (data.success === "true" || data.success === true)) {
+          // 触发 GA4 / Google Ads conversion event (boss 启用 gtag 后立刻生效, 没启用也无害 noop)
+          try {
+            if (typeof gtag === "function") {
+              gtag("event", "generate_lead", {
+                event_category: "enquiry",
+                event_label: payload.scope || "form",
+                value: 1,
+              });
+              // Google Ads conversion (boss 拿到 conversion ID + label 后填进 send_to)
+              // gtag('event', 'conversion', { send_to: 'AW-XXXXXXXXX/XXXXXXXXXX_X' });
+            }
+          } catch (_) {}
           window.location.href = "/thanks.html";
         } else {
           goNative();
@@ -1126,4 +1141,74 @@
 
   /* ───────── Init ───────── */
   applyLang(detectLang());
+})();
+
+/* ═════════════════════════════════════════════════════════════
+   Cookie Consent Banner (GDPR + HK PDPO 合规)
+   - localStorage key: dp-cookie-consent (granted | denied)
+   - Google Consent Mode v2: 默认 denied, accept 后 update
+   - 独立 IIFE, 跟上面平级, 不嵌套
+   ═════════════════════════════════════════════════════════════ */
+(function(){
+  // 检查 localStorage 是否有 cookie consent 决定
+  const KEY = 'dp-cookie-consent'; // 值: 'granted' | 'denied'
+  const saved = localStorage.getItem(KEY);
+
+  // Google Consent Mode v2 — 默认 denied
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  if (saved === 'granted') {
+    gtag('consent', 'default', {
+      'ad_storage': 'granted', 'ad_user_data': 'granted', 'ad_personalization': 'granted',
+      'analytics_storage': 'granted', 'functionality_storage': 'granted', 'security_storage': 'granted'
+    });
+  } else {
+    gtag('consent', 'default', {
+      'ad_storage': 'denied', 'ad_user_data': 'denied', 'ad_personalization': 'denied',
+      'analytics_storage': 'denied', 'functionality_storage': 'granted', 'security_storage': 'granted'
+    });
+  }
+
+  // 如果用户已经做出决定, 不显示 banner
+  if (saved) return;
+
+  // 等 DOM ready 后注入 banner HTML
+  document.addEventListener('DOMContentLoaded', () => {
+    if (document.getElementById('cookie-banner')) return;
+    const b = document.createElement('div');
+    b.id = 'cookie-banner';
+    b.className = 'cookie-banner';
+    b.innerHTML = `
+      <div class="cookie-banner-inner">
+        <p class="cookie-banner-text">
+          <span class="cookie-banner-en">We use cookies for site analytics and ad performance. Essentials always on; analytics & ads need your consent. <a href="/privacy.html">Privacy details ↗</a></span>
+          <span class="cookie-banner-zh">本網站使用 cookies 進行流量分析和廣告效能追蹤。必要 cookies 一直開啟；分析和廣告 cookies 需您同意。<a href="/privacy.html">私隱詳情 ↗</a></span>
+        </p>
+        <div class="cookie-banner-actions">
+          <button type="button" class="cookie-btn-decline">
+            <span class="cookie-banner-en">Decline</span>
+            <span class="cookie-banner-zh">拒絕</span>
+          </button>
+          <button type="button" class="cookie-btn-accept">
+            <span class="cookie-banner-en">Accept</span>
+            <span class="cookie-banner-zh">同意</span>
+          </button>
+        </div>
+      </div>`;
+    document.body.appendChild(b);
+
+    function handle(value) {
+      localStorage.setItem(KEY, value);
+      if (value === 'granted') {
+        gtag('consent', 'update', {
+          'ad_storage': 'granted', 'ad_user_data': 'granted', 'ad_personalization': 'granted',
+          'analytics_storage': 'granted'
+        });
+      }
+      b.classList.add('is-hidden');
+      setTimeout(() => b.remove(), 350);
+    }
+    b.querySelector('.cookie-btn-accept').addEventListener('click', () => handle('granted'));
+    b.querySelector('.cookie-btn-decline').addEventListener('click', () => handle('denied'));
+  });
 })();
