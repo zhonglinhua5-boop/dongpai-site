@@ -1172,27 +1172,28 @@
   // 如果用户已经做出决定, 不显示 banner
   if (saved) return;
 
-  // 等 DOM ready 后注入 banner HTML
+  // 等 DOM ready 后注入 banner HTML — 单语言版本 (不依赖 CSS class 切换避免缓存问题)
   document.addEventListener('DOMContentLoaded', () => {
     if (document.getElementById('cookie-banner')) return;
+    // 当前 lang detect (跟主网站的 detectLang 一致)
+    const bodyCls = document.body.className || '';
+    const isZh = /lang-zh/.test(bodyCls) || (document.documentElement.lang || '').toLowerCase().startsWith('zh');
+    const isHans = /lang-zh-hans/.test(bodyCls);
+    const txt = {
+      en:    { body: 'We use cookies for site analytics and ad performance. Essentials always on; analytics & ads need your consent.', link: 'Privacy details ↗', decline: 'Decline', accept: 'Accept' },
+      hant:  { body: '本網站使用 cookies 進行流量分析和廣告效能追蹤。必要 cookies 一直開啟；分析和廣告 cookies 需您同意。', link: '私隱詳情 ↗', decline: '拒絕', accept: '同意' },
+      hans:  { body: '本网站使用 cookies 进行流量分析和广告效能追踪。必要 cookies 一直开启；分析和广告 cookies 需您同意。', link: '隐私详情 ↗', decline: '拒绝', accept: '同意' },
+    };
+    const t = isHans ? txt.hans : (isZh ? txt.hant : txt.en);
     const b = document.createElement('div');
     b.id = 'cookie-banner';
     b.className = 'cookie-banner';
     b.innerHTML = `
       <div class="cookie-banner-inner">
-        <p class="cookie-banner-text">
-          <span class="cookie-banner-en">We use cookies for site analytics and ad performance. Essentials always on; analytics & ads need your consent. <a href="/privacy.html">Privacy details ↗</a></span>
-          <span class="cookie-banner-zh">本網站使用 cookies 進行流量分析和廣告效能追蹤。必要 cookies 一直開啟；分析和廣告 cookies 需您同意。<a href="/privacy.html">私隱詳情 ↗</a></span>
-        </p>
+        <p class="cookie-banner-text">${t.body} <a href="/privacy.html">${t.link}</a></p>
         <div class="cookie-banner-actions">
-          <button type="button" class="cookie-btn-decline">
-            <span class="cookie-banner-en">Decline</span>
-            <span class="cookie-banner-zh">拒絕</span>
-          </button>
-          <button type="button" class="cookie-btn-accept">
-            <span class="cookie-banner-en">Accept</span>
-            <span class="cookie-banner-zh">同意</span>
-          </button>
+          <button type="button" class="cookie-btn-decline">${t.decline}</button>
+          <button type="button" class="cookie-btn-accept">${t.accept}</button>
         </div>
       </div>`;
     document.body.appendChild(b);
